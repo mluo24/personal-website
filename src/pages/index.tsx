@@ -1,4 +1,5 @@
 import * as React from "react"
+import {CSSProperties} from "react";
 
 // styles
 const pageStyles = {
@@ -62,7 +63,7 @@ const docLink = {
   color: "#8954A8",
 }
 
-const badgeStyle = {
+const badgeStyle : CSSProperties = {
   color: "#fff",
   backgroundColor: "#088413",
   border: "1px solid #088413",
