@@ -15,32 +15,39 @@ jobs:
         with:
           root_file: main.tex
           working_directory: static
-          compiler: lualatex
+          latexmk_use_lualatex: true
           extra_fonts: ./fonts/*.ttf
       - name: Uploading artifact
         uses: actions/upload-artifact@v2
         with:
           name: PDF
           path: static/main.pdf
-      - name: Get Time
-        id: time
-        uses: nanzm/get-time-action@v1.1
-        with:
-          timeZone: -7
-          format: 'YYYY-MM-DD-HH-mm-ss'
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: Resume compiled on ${{ steps.time.outputs.time }}
-          tag_name: ${{ steps.time.outputs.time }}
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: static/main.pdf
-          asset_name:  static/resume-${{ steps.time.outputs.time }}.pdf
-          asset_content_type: application/pdf
+      - name: Commit Resume
+        run: |
+          git config --global user.email "${{github.actor}}@users.noreply.github.com"
+          git config --global user.name "${{github.actor}}"
+          git commit -am "compiled resume latex to pdf"
+          git push
+#       - name: Get Time
+#         id: time
+#         uses: nanzm/get-time-action@v1.1
+#         with:
+#           timeZone: -7
+#           format: 'YYYY-MM-DD-HH-mm-ss'
+# Probably move this to a different repo in the future
+#       - name: Create Release
+#         id: create_release
+#         uses: softprops/action-gh-release@v1
+#         with:
+#           name: Resume compiled on ${{ steps.time.outputs.time }}
+#           tag_name: ${{ steps.time.outputs.time }}
+#       - name: Upload Release Asset
+#         id: upload-release-asset
+#         uses: actions/upload-release-asset@v1
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           upload_url: ${{ steps.create_release.outputs.upload_url }}
+#           asset_path: static/main.pdf
+#           asset_name:  static/resume-${{ steps.time.outputs.time }}.pdf
+#           asset_content_type: application/pdf
