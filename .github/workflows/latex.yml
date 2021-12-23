@@ -15,6 +15,7 @@ jobs:
         with:
           root_file: main.tex
           working_directory: static
+          compiler: lualatex
           extra_fonts: ./fonts/*.ttf
       - name: Uploading artifact
         uses: actions/upload-artifact@v2
