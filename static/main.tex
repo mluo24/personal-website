@@ -1,0 +1,374 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fontspec}
+\usepackage{fontawesome}
+% \input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+% \usepackage[sfdefault]{poppins}
+
+% USING LUALATEX CUSTOM FONT
+% https://fonts.google.com/specimen/Mulish?category=Sans+Serif
+\setmainfont{Mulish}[
+Path = fonts/,
+Extension = .ttf ,
+UprightFont = *-Regular,
+BoldFont = *-SemiBold,
+ItalicFont = *-Italic,
+BoldItalicFont = *-BoldItalic 
+]
+
+% https://fonts.google.com/specimen/Montserrat?category=Sans+Serif
+\newfontfamily{\montserrat}{Montserrat}
+[
+Path = fonts/,
+Extension = .ttf ,
+UprightFont = *-Medium ,
+BoldFont = *-Bold ,
+ItalicFont = *-MediumItalic,
+BoldItalicFont = *-BoldItalic 
+]
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{\montserrat \color{MidnightBlue}
+  \vspace{-8pt}
+%   \scshape
+\raggedright\large
+}{}{0em}{}[\color{CadetBlue}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\montserrat #1} & {\montserrat #2} \\
+      \textit{\textbf{\small#3}} & \textit{ \small #4} \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+  \vspace{-5pt}\item
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{\textbf{\small#1}} & \textit{ \small #2} \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.99\textwidth}{l@{\extracolsep{\fill}}r}
+      \montserrat \small#1 & #2 \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeSkillItem}[1]{
+\item\small{
+    {#1 \vspace{-7pt}}
+  }
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.02in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize} [leftmargin=0.25in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\montserrat {\color{Blue} \huge Miranda Luo}} & \small \faMapMarker\ Montvale, NJ \\
+%   \href{http://mirandaluo.com/}{\faLink\ http://www.mirandaluo.com}  $\cdot$
+\small \color{Cerulean}
+\href{mailto:mml267@cornell.edu}{\faEnvelopeO\ \underline{mml267@cornell.edu}} $\cdot$
+    \href{https://github.com/mluo24}{\faGithub\ \underline{github.com/mluo24}} $\cdot$
+    \href{https://linkedin.com/in/miranda-luo}{\faLinkedin\ \underline{linkedin.com/in/miranda-luo}}
+    
+  & \small \faPhone\ 732-887-6531 \\
+\end{tabular*}
+
+% #1
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+% older version
+% \begin{center}
+%     \textbf{\montserrat \color{BlueViolet} \huge 
+%     % \scshapev 
+%     Miranda Luo} \\ \vspace{1pt}
+%     \montserrat
+%     \footnotesize Montvale, NJ $|$ 
+%     732-887-6531 $|$ 
+%     \href{mailto:mml267@cornell.edu}{\underline{mml267@cornell.edu}} $|$
+%     \href{https://github.com/mluo24}{\underline{github.com/mluo24}} $|$
+%     \href{https://linkedin.com/in/miranda-luo}{\underline{linkedin.com/in/miranda-luo}}
+% \end{center}
+
+% current centered
+% \begin{center}
+%     \textbf{\montserrat \color{BlueViolet} \huge 
+%     % \scshapev 
+%     Miranda Luo} \\ \vspace{1pt}
+    
+%     \small \faMapMarker\ Montvale, NJ $\cdot$
+%     \faPhone\ 732-887-6531 $\cdot$
+%     \montserrat \color{Cerulean}
+%     \href{mailto:mml267@cornell.edu}{\faEnvelopeO\ mml267@cornell.edu} $\cdot$
+%     \href{https://github.com/mluo24}{\faGithub\ mluo24} $\cdot$
+%     \href{https://linkedin.com/in/miranda-luo}{\faLinkedin\ miranda-luo}
+% \end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {Cornell University}{Ithaca, NY}
+      {Bachelor of Arts in Computer Science and Biological Sciences, GPA - 3.87}{expected May 2024}
+      \resumeItemListStart
+      	\resumeItem {\textbf{\montserrat Relevant Coursework}: Object Oriented Programming \& Data Structures, Discrete Structures, Functional Programming, Intro to Backend, Trends in Web Development (Fall 21: Algorithms, Data Driven Web Apps)}
+        \resumeItem {\textbf{\montserrat Clubs}: Association of Computer Science Undergrads, Women in Computing, Running Club, Marching Band}
+       \resumeItemListEnd
+%     \resumeSubheading
+%       {Pascack Hills High School}{Montvale, NJ}
+%       {GPA - 4.8}{Aug. 2016 -- Jun. 2020}
+  \resumeSubHeadingListEnd
+  
+  %-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills \& Awards}
+ \resumeSubHeadingListStart
+    \resumeSkillItem{
+    \textbf{\montserrat Languages}{: Java, Python, JavaScript/TypeScript, PHP, C++, OCaml, SQL (Postgres, MySQL), R}}
+    
+    \resumeSkillItem{
+     \textbf{\montserrat Frameworks}{: Django, Ruby on Rails, Flask, Laravel, Node.js, React, Bootstrap, MaterialUI, WordPress}}
+    
+    \resumeSkillItem{
+     \textbf{\montserrat Libraries/Technologies}{: HTML/CSS, Git, Heroku, RESTful APIs, pandas, NumPy, scikit-learn}}
+    
+    \resumeSkillItem{
+     \textbf{\montserrat Awards}{: Aspirations in Computing Certificate of Distinction (National Center for Women \& IT),
+     Computing Awards Honorable Mention (New Jersey Regional Science Fair), Dean's List}}
+%     \small{\item{
+%      \textbf{\montserrat Languages}{: Java, Python, JavaScript/TypeScript, PHP, C++, OCaml, SQL (Postgres, MySQL), R} \\
+%      \textbf{\montserrat Frameworks}{: Django, Ruby on Rails, Flask, Laravel, Node.js, React, Bootstrap, MaterialUI, WordPress} \\
+% %      \textbf{Developer Tools}{: Git, VSCode, PyCharm, Eclipse} \\
+%      \textbf{\montserrat Libraries/Technologies}{: HTML/CSS, Git, Heroku, RESTful APIs, pandas, NumPy, scikit-learn} \\
+%      \textbf{\montserrat Awards}{: Aspirations in Computing Certificate of Distinction (National Center for Women \& IT),
+%      Computing Awards Honorable Mention (New Jersey Regional Science Fair), Dean's List}
+%     }}
+ \resumeItemListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+  
+  \resumeSubheading
+      {Cornell University}{Ithaca, NY}
+      %#1%
+      {Cornell Design \& Tech Initiative - Developer}{September 2021 -- Present}
+      \resumeItemListStart
+        \resumeItem{Implementing match UI functionality on Zing, a tool for professors to intelligently form groups of students}
+      \resumeItemListEnd
+      %# 2%
+
+    \resumeSubSubheading
+      {Data Structures and Functional Programming Consultant}{August  2021 -- Present}
+      \resumeItemListStart
+        \resumeItem{Holding 3 consulting hours a week to help 6 students per hour with assignments (400+ students in class)}
+        \resumeItem{Grading assignments and exams and managing/assisting 2 groups for their final projects}
+      \resumeItemListEnd
+      
+   \resumeSubSubheading
+    {Cornell Cup Robotics - Minibot CS Software Developer}{March 2021 -- September 2021}
+      \resumeItemListStart
+        \resumeItem{Revamped Minibot UI/UX, a robot for children to learn about robotics, using React and Figma}
+        % \resumeItem{Ran user testing and feedback sessions with non-CS members and redesigned UI elements with Figma}
+        \resumeItem{Eliminated excessive page scrolling/whitespace and reduced distance between elements by about 50\%}
+      \resumeItemListEnd
+
+  	\resumeSubheading
+      {Workstream}{San Francisco, CA}
+      {Full-stack Software Engineering Intern}{June  2021 -- August 2021}
+      \resumeItemListStart
+        \resumeItem{Developed state tax withholding form UI \& HelloSign signing onboarding module for over 100 businesses}
+%         \resumeItem{APIs}
+        \resumeItem{Designed/wrote APIs for dynamic search of ADP workers and extra data submission through form to ADP}
+        \resumeItem{Resolved bugs and high priority tickets as reported by customer service, wrote tests for backend}
+      \resumeItemListEnd
+	
+%      \resumeSubheading
+%       {Cornell Cup Robotics}{Ithaca, NY}
+%       {Minibot CS Software Developer}{March 2021 -- Present}
+%       \resumeItemListStart
+%         \resumeItem{Revamped the Minibot UI, a robot for children and young adults to learn about robotics, using React and Flask}
+%         \resumeItem{Ran user testing and feedback sessions and redesigned UI elements with Figma}
+%         \resumeItem{Eliminated excessive scrolling from page and reduced distance between elements by 50\%}
+%       \resumeItemListEnd
+    
+    \resumeSubheading
+      {Kadmon}{New York, NY}
+      {Molecular Signaling Summer Intern}{June 2019 -- July 2020}
+      \resumeItemListStart
+        \resumeItem{Predicted positive protein crystallization conditions with 90\% accuracy of prediction over last generation with reinforcement learning algorithms}
+        \resumeItem{Researched and presented basic machine learning findings for use in drug development to the department}
+        \resumeItem{Experimented with protein modeling and molecular dynamics using Molecular Operating Environment (MOE)}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{FRC Robotics Scouting Server} $|$ \emph{Laravel, MySQL, Bootstrap} 
+          - 
+          \color{Cerulean}
+          \href{https://github.com/mluo24/pascack-pioneers-scouting-2020}{\scriptsize github.com/mluo24/pascack-pioneers-scouting-2020} } {}
+          \resumeItemListStart
+          	\resumeItem{Led a team of 3 to develop database for over 80 users to upload and share strategic robot scouting information}
+            \resumeItem{Designed innovative form to associate form elements with corresponding locations on game field visually}
+            \resumeItem{Implemented Google OAuth \& system for searching/exporting 100s of lines of data formatted for analysis}
+            % \resumeItem{Developed system for searching/exporting 100s of lines of data, formatted for statistical analysis with JS tables.}
+            % \resumeItem{Implemented OAuth for easy user login and authentication system to distinguish teammates and outsiders}
+            % \resumeItem{Developed system for searching/exporting 100s of lines of data, formatted for statistical analysis with JS tables.}
+          \resumeItemListEnd
+          
+          \resumeProjectHeading
+          {\textbf{Cornell Simulator (Game)} $|$ \emph{OCaml} 
+          - 
+          \color{Cerulean}
+          \href{https://github.com/mluo24/CornellSimulator}{\scriptsize github.com/mluo24/CornellSimulator} }{}
+          \resumeItemListStart
+          	\resumeItem{Created a 2-D tile-based single-player game simulating the life of a college student}
+            \resumeItem{Implemented and optimized a tileset engine to easily create game maps with separate interactive layers}
+            \resumeItem{Designed and integrated a mission/leveling up system with GPA calculation and item collection/usage}
+          \resumeItemListEnd
+          
+        %   \resumeProjectHeading
+        %   {\textbf{Sharefolio} $|$ \emph{Python} 
+        %   - 
+        %   \color{Cerulean}
+        %   \href{https://github.com/mluo24/CornellSimulator}{\scriptsize github.com/mluo24/CornellSimulator} }{}
+        %   \resumeItemListStart
+        %   	\resumeItem{TODO}
+        %   \resumeItemListEnd
+          
+          
+%       \resumeProjectHeading
+%           {\textbf{Pascack Pi-Oneers Dashboard} $|$ \emph{PHP, MySQL, Bootstrap}}{}
+%           \resumeItemListStart
+%           \resumeItem{Co-lead a team of 10 for development over 6 weeks in FRC Robotics team}
+%             \resumeItem{Developed user dashboard for over 80 students to clock in and efficiently record attendance for team events}
+%             \resumeItem{Implemented CMS-like feature for team admins to conveniently post team-wide announcements and emails}
+%             \resumeItem{Automated tracked scorecard for students, reducing time for admins to grade member performance}
+%           \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Improving Semi-quantitative Colorimetric Test Kits} $|$ \emph{Python} 
+          - 
+          \color{Cerulean}
+          \href{https://github.com/mluo24/p-colorimetric-analysis}{\scriptsize github.com/mluo24/p-colorimetric-analysis} }{}
+          \resumeItemListStart
+            \resumeItem{Developed algorithm to determine concentration of phosphorus solutions through generated absorbance curves of known solutions and smart phone pictures}
+%             \resumeItem{Collected tested samples of spinach with semi-quantitative phosphorus test kit, ran it through spectrophotometer to collect absorbance data, took pictures of the data in a controlled setting}
+% 			\resumeItem{Generated absorbance curve of solutions from and took pictures of semi-quant. test kit in controlled setting}
+            \resumeItem{Analyzed association of RGB values and solution absorbance to true concentration, determined 90\% fit}
+          \resumeItemListEnd
+% 	\resumeProjectHeading
+%           {\textbf{Project Wieland} $|$ \emph{Java}}{}
+%           \resumeItemListStart
+%             \resumeItem{Developed app for school administrators to significantly reduce time to create schedules for hundreds of students}
+%             \resumeItem{Greedy algorithm to check list of class conflicts in conflict matrix with the most optimal (least) amount of conflicts}
+%           \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%------------------AWARDS-------------------
+
+% \section{Awards}
+%  \begin{itemize}[leftmargin=0.02in, label={}]
+%     \small{\item{
+%      \textbf{{\montserrat Aspirations in Computing Certificate of Distinction}} {(National Center for Women \& IT) | 2017}\\
+%      \textbf{{\montserrat Computing Awards Honorable Mention}} {(New Jersey Regional Science Fair) | March 2019} \\
+%     }}
+%  \end{itemize}
+
+
+
+%-------------------------------------------
+\end{document}
