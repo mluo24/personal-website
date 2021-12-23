@@ -26,7 +26,8 @@ jobs:
         run: |
           git config --global user.email "${{github.actor}}@users.noreply.github.com"
           git config --global user.name "${{github.actor}}"
-          git commit -am "compiled resume latex to pdf"
+          git add static/main.pdf
+          git commit -m "compiled resume latex to pdf"
           git push
 #       - name: Get Time
 #         id: time
