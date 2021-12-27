@@ -13,8 +13,9 @@ export default function TopLayout(props: propTypes) {
     <React.Fragment>
       <Helmet>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap"
           rel="stylesheet"
         />
       </Helmet>
