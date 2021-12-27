@@ -7,15 +7,12 @@ module.exports = {
     jest: true,
     es6: true,
   },
-  plugins: ["import"],
   extends: ["react-app", "react-app/jest", "plugin:prettier/recommended"],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2021,
     sourceType: "module",
   },
   rules: {
     "no-console": "warn",
-    "no-eval": "error",
-    "import/first": "error",
   },
 }
