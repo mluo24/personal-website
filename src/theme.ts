@@ -1,19 +1,58 @@
 import { red } from "@mui/material/colors"
 import { createTheme } from "@mui/material/styles"
 
-const theme = createTheme({
-  typography: {
-    fontFamily: "Open Sans, Arial",
+const fonts = {
+  fontFamily: "Open Sans, Arial",
+  h1: {
+    fontFamily: "Montserrat, Verdana",
+    fontWeight: 600,
+    color: "#9A8C98",
   },
-  palette: {
-    primary: {
-      main: "#556cd6",
+  h2: {
+    fontFamily: "Montserrat, Verdana",
+    fontWeight: 600,
+    color: "#9A8C98",
+  },
+  h3: {
+    fontFamily: "Montserrat, Verdana",
+    fontWeight: 600,
+    color: "#9A8C98",
+  },
+  h4: {
+    fontFamily: "Montserrat, Verdana",
+    fontWeight: 600,
+    color: "#9A8C98",
+  },
+}
+
+const colors = {
+  primary: {
+    main: "#E0FBFC",
+  },
+  secondary: {
+    main: "#19857b",
+  },
+  error: {
+    main: red.A400,
+  },
+}
+
+const theme = createTheme({
+  typography: fonts,
+  palette: colors,
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        body {
+          background: #22223B;
+          color: #F2E9E4
+        }
+      `,
     },
-    secondary: {
-      main: "#19857b",
-    },
-    error: {
-      main: red.A400,
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
     },
   },
 })
