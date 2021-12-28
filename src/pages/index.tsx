@@ -9,9 +9,12 @@ const IndexPage = () => {
         <Typography variant="h2" component="h1" gutterBottom>
           Hi, I'm Miranda!
         </Typography>
-        <Link component={GatsbyLink} to="/about" color="secondary">
-          Go to the about page
-        </Link>
+        <Typography variant="body1">
+          This is some body text.{" "}
+          <Link component={GatsbyLink} to="/about" underline="hover">
+            Go to the about page
+          </Link>
+        </Typography>
       </Box>
     </Container>
   )
