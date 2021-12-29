@@ -1,11 +1,12 @@
 import * as React from "react"
-import { Box, Container, Typography, Link } from "@mui/material"
+import { Container, Typography, Link } from "@mui/material"
 import { Link as GatsbyLink } from "gatsby"
+import Layout from "../components/Layout"
 
 const IndexPage = () => {
   return (
-    <Container maxWidth="md">
-      <Box sx={{ my: 4 }}>
+    <Layout>
+      <Container maxWidth="md">
         <Typography variant="h2" component="h1" gutterBottom>
           Hi, I'm Miranda!
         </Typography>
@@ -15,8 +16,8 @@ const IndexPage = () => {
             Go to the about page
           </Link>
         </Typography>
-      </Box>
-    </Container>
+      </Container>
+    </Layout>
   )
 }
 

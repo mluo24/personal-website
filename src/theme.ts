@@ -1,37 +1,6 @@
 import { red } from "@mui/material/colors"
 import { createTheme } from "@mui/material/styles"
 
-const fonts = {
-  fontFamily: [
-    "Open Sans",
-    "Roboto",
-    '"Helvetica Neue"',
-    "Arial",
-    "sans-serif",
-  ].join(","),
-  color: "",
-  h1: {
-    fontFamily: "Montserrat, Verdana",
-    fontWeight: 600,
-    color: "#9A8C98",
-  },
-  h2: {
-    fontFamily: "Montserrat, Verdana",
-    fontWeight: 600,
-    color: "#9A8C98",
-  },
-  h3: {
-    fontFamily: "Montserrat, Verdana",
-    fontWeight: 600,
-    color: "#9A8C98",
-  },
-  h4: {
-    fontFamily: "Montserrat, Verdana",
-    fontWeight: 600,
-    color: "#9A8C98",
-  },
-}
-
 declare module "@mui/material/styles" {
   interface Palette {
     colors: Palette["primary"]
@@ -87,13 +56,7 @@ const colors = createTheme({
 
 const theme = createTheme(colors, {
   typography: {
-    fontFamily: [
-      "Open Sans",
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-    ].join(","),
+    fontFamily: ['"Open Sans"', '"Helvetica Neue"', "Arial", "sans-serif"].join(","),
     color: colors.palette.colors.isabelline,
     h1: {
       fontFamily: "Montserrat, Verdana",

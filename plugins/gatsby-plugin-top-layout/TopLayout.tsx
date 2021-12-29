@@ -5,7 +5,7 @@ import { ThemeProvider } from "@mui/material/styles"
 import theme from "../../src/theme"
 
 interface propTypes {
-  children: React.Component
+  children: JSX.Element
 }
 
 export default function TopLayout(props: propTypes) {
