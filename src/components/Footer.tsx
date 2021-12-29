@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material"
 
 const Footer = () => {
   return (
-    <Box>
+    <Box p={4}>
       <Typography align="center">Placeholder footer. Site made with MUI</Typography>
     </Box>
   )

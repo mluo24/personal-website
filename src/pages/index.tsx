@@ -1,21 +1,19 @@
 import * as React from "react"
-import { Container, Typography, Link } from "@mui/material"
-import { Link as GatsbyLink } from "gatsby"
+import { Container } from "@mui/material"
 import Layout from "../components/Layout"
+import About from "../components/About"
+import Experience from "../components/Experience"
+import Projects from "../components/Projects"
+import Contact from "../components/Contact"
 
 const IndexPage = () => {
   return (
     <Layout>
-      <Container maxWidth="md">
-        <Typography variant="h2" component="h1" gutterBottom>
-          Hi, I'm Miranda!
-        </Typography>
-        <Typography variant="body1">
-          This is some body text.{" "}
-          <Link component={GatsbyLink} to="/about" underline="hover">
-            Go to the about page
-          </Link>
-        </Typography>
+      <Container>
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
       </Container>
     </Layout>
   )
