@@ -8,7 +8,19 @@ import Tag from "./Tag"
 const About = () => {
   return (
     <Box pt={2} sx={{ minHeight: "100vh" }}>
-      <Grid container spacing={8}>
+      <Grid container spacing={8} direction={{ md: "row-reverse" }}>
+        <Grid item md={8}>
+          <Typography variant="h2" component="h1" gutterBottom>
+            Hi, I'm Miranda!
+          </Typography>
+          <Typography variant="body1">
+            This is some body text.{" "}
+            <Link component={GatsbyLink} to="/about" underline="hover">
+              Go to the about page
+            </Link>
+          </Typography>
+          <Tag label="Java" />
+        </Grid>
         <Grid item md>
           <Skeleton
             variant="circular"
@@ -27,18 +39,6 @@ const About = () => {
               Running, Hiking, Art, Clarinet, Piano, Video Games
             </Typography>
           </Box>
-        </Grid>
-        <Grid item md={8}>
-          <Typography variant="h2" component="h1" gutterBottom>
-            Hi, I'm Miranda!
-          </Typography>
-          <Typography variant="body1">
-            This is some body text.{" "}
-            <Link component={GatsbyLink} to="/about" underline="hover">
-              Go to the about page
-            </Link>
-          </Typography>
-          <Tag label="Java" />
         </Grid>
       </Grid>
     </Box>

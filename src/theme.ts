@@ -78,6 +78,11 @@ const theme = createTheme(colors, {
       fontWeight: 600,
       color: colors.palette.colors.heliotrope,
     },
+    h5: {
+      fontFamily: "Montserrat, Verdana",
+      fontWeight: 600,
+      color: colors.palette.colors.heliotrope,
+    },
   },
   components: {
     MuiCssBaseline: {
@@ -91,6 +96,13 @@ const theme = createTheme(colors, {
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        outlined: {
+          borderRadius: 9,
+        },
       },
     },
   },

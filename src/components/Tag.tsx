@@ -13,7 +13,8 @@ const Tag = styled(Chip)<ChipProps>(({ theme }) => ({
   },
   "&.MuiChip-sizeSmall": {
     backgroundColor: theme.palette.colors.oldLavender,
-    fontSize: 16,
+    height: 22,
+    fontSize: 14,
   },
 }))
 
