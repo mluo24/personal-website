@@ -88,6 +88,7 @@ const Navbar = () => {
                 </IconButton>
               ))}
             </Box>
+
             <Box sx={{ flexGrow: { xs: 0, md: 1 } }} />
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -126,6 +127,7 @@ const Navbar = () => {
                 ))}
               </Menu>
             </Box>
+
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
