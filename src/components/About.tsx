@@ -7,7 +7,7 @@ import Tag from "./Tag"
 
 const About = () => {
   return (
-    <Box pt={2} sx={{ minHeight: "100vh" }}>
+    <Box pt={3} sx={{ minHeight: "100vh" }}>
       <Grid container spacing={8} direction={{ md: "row-reverse" }}>
         <Grid item md={8}>
           <Typography variant="h2" component="h1" gutterBottom>

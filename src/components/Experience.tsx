@@ -1,6 +1,28 @@
 import * as React from "react"
 
 import { Box, Typography } from "@mui/material"
+import WorkTimeline from "./WorkTimeline"
+import { TimelineBlockType } from "../types/pagetypes"
+
+const jobs: TimelineBlockType[] = [
+  {
+    startDate: "Aug 2021",
+    endDate: "Current",
+    role: "Software Engineering Intern",
+    company: "Facebook",
+    bullets: [
+      "Implemented a lot of really cool things here, putting more stuff so that it goes to the next line",
+      "also did a lot of cool things here",
+    ],
+  },
+  {
+    startDate: "Mar 2021",
+    endDate: "May 2021",
+    role: "Software Engineering Intern",
+    company: "Workstream",
+    bullets: ["Did a lot of cool things", "also did a lot of cool things here"],
+  },
+]
 
 const Experience = () => {
   return (
@@ -8,19 +30,9 @@ const Experience = () => {
       <Typography variant="h3" component="h2" gutterBottom>
         Work Experience
       </Typography>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Condimentum id venenatis
-        a condimentum vitae sapien pellentesque habitant morbi. Eget mauris pharetra
-        et ultrices neque ornare. Sapien nec sagittis aliquam malesuada bibendum.
-        Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Gravida
-        dictum fusce ut placerat orci nulla pellentesque dignissim enim. Felis eget
-        nunc lobortis mattis aliquam faucibus purus in. Dictum varius duis at
-        consectetur lorem. Adipiscing commodo elit at imperdiet dui accumsan sit
-        amet. Neque sodales ut etiam sit amet nisl purus in mollis. Mi eget mauris
-        pharetra et ultrices neque. A erat nam at lectus urna. Nisi scelerisque eu
-        ultrices vitae. Lorem donec massa sapien faucibus et molestie ac feugiat.
-      </p>
+      <Box m={6}>
+        <WorkTimeline jobs={jobs} />
+      </Box>
       <p>
         Platea dictumst vestibulum rhoncus est. In tellus integer feugiat scelerisque
         varius morbi enim. Sagittis aliquam malesuada bibendum arcu vitae. Mi

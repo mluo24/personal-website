@@ -12,3 +12,16 @@ export interface ProjectCardType extends ChildrenPageTypes {
 export interface ProjectGridType {
   projects: ProjectCardType[]
 }
+
+export interface TimelineBlockType {
+  startDate: string
+  endDate: string
+  role: string
+  company: string
+  companyUrl?: string
+  bullets: string[]
+}
+
+export interface TimelineType {
+  jobs: TimelineBlockType[]
+}
