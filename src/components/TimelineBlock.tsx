@@ -10,7 +10,7 @@ const Circle = styled("div")(({ theme }) => ({
   borderRadius: "100%",
   position: "absolute",
   left: "20%",
-  marginLeft: "-1.0rem",
+  marginLeft: "-1rem",
 }))
 
 const TimelineBlock = ({
@@ -23,12 +23,16 @@ const TimelineBlock = ({
   return (
     <Box position="relative">
       <Circle />
-      <Box pr={4} pt={0.5} sx={{ width: "20%" }}>
-        <Typography variant="body2" align="right" sx={{ fontFamily: "Inconsolata" }}>
+      <Box pr={4} sx={{ width: "20%" }}>
+        <Typography
+          variant="subtitle1"
+          align="right"
+          sx={{ fontFamily: "Inconsolata" }}
+        >
           {startDate} - {endDate}
         </Typography>
       </Box>
-      <Box pl={5} pb={2} sx={{ marginLeft: "20%", marginTop: -2.6 }}>
+      <Box pl={5} pb={1} sx={{ marginLeft: "20%", marginTop: -3.5 }}>
         <Typography variant="h5" component="h3" gutterBottom>
           {role} @ {company}
         </Typography>
