@@ -83,6 +83,7 @@ const Navbar = () => {
                   color="primary"
                   href={social.url}
                   target="_blank"
+                  sx={{ mx: 0.5 }}
                 >
                   {social.icon}
                 </IconButton>

@@ -101,7 +101,7 @@ const theme = createTheme(colors, {
     MuiButton: {
       styleOverrides: {
         outlined: {
-          borderRadius: 9,
+          borderRadius: 8,
         },
       },
     },
