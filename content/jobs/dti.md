@@ -2,7 +2,7 @@
 title: "Cornell Design & Tech Initiative"
 role: "Software Developer"
 startDate: "2021-06"
-endDate: "2022-12"
+endDate: "2022-02"
 isCurrent: true
 ---
 

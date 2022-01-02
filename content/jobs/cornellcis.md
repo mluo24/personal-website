@@ -2,7 +2,7 @@
 title: "Cornell"
 role: "Data Structures and Functional Programming Consultant"
 startDate: "2021-06"
-endDate: "2022-12"
+endDate: "2022-01"
 isCurrent: true
 ---
 

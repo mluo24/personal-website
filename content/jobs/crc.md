@@ -1,8 +1,8 @@
 ---
 title: "Cornell Cup Robotics"
 role: "Minibot Developer"
-startDate: "2021-06"
-endDate: "2021-08"
+startDate: "2021-02"
+endDate: "2021-09"
 isCurrent: false
 ---
 

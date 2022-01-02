@@ -1,8 +1,8 @@
 ---
 title: "Kadmon"
 role: "Molecular Signaling Intern"
-startDate: "2021-06"
-endDate: "2021-08"
+startDate: "2019-06"
+endDate: "2020-07"
 isCurrent: false
 ---
 

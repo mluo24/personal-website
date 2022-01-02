@@ -7,7 +7,10 @@ import { graphql, useStaticQuery } from "gatsby"
 const Experience = () => {
   const data = useStaticQuery(graphql`
     query JobsQuery {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(jobs)/" } }) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(jobs)/" } }
+        sort: { fields: frontmatter___endDate, order: DESC }
+      ) {
         nodes {
           html
           frontmatter {
