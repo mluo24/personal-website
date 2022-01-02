@@ -13,13 +13,9 @@ import GitHubIcon from "@mui/icons-material/GitHub"
 import { ProjectCardType } from "../types/pagetypes"
 import Tag from "./Tag"
 
-const ProjectCard = ({
-  title,
-  year,
-  tools,
-  githubLink,
-  children,
-}: ProjectCardType) => {
+const ProjectCard = ({ frontmatter, html }: ProjectCardType) => {
+  const { title, year, technologies, githubLink } = frontmatter
+
   return (
     <Card
       elevation={4}
@@ -44,7 +40,7 @@ const ProjectCard = ({
             {year}
           </Typography>
         </Box>
-        {children}
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </CardContent>
       <CardActions sx={{ mx: 1, mb: 1 }}>
         <Stack
@@ -54,7 +50,7 @@ const ProjectCard = ({
           alignItems="center"
           flexWrap="wrap"
         >
-          {tools.map((tool) => (
+          {technologies.map((tool) => (
             <Tag key={tool} label={tool} size="small" />
           ))}
         </Stack>

@@ -3,10 +3,14 @@ export interface ChildrenPageTypes {
 }
 
 export interface ProjectCardType extends ChildrenPageTypes {
-  title: string
-  year: number
-  tools: string[]
-  githubLink: string
+  frontmatter: {
+    title: string
+    year: number
+    technologies: string[]
+    githubLink: string
+  }
+  html: string
+  id: string
 }
 
 export interface ProjectGridType {
