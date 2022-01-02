@@ -20,8 +20,8 @@ const WorkTimeline = ({ jobs }: TimelineType) => {
         },
       }}
     >
-      {jobs.map((job, i) => {
-        return <TimelineBlock key={i} {...job} />
+      {jobs.map((job) => {
+        return <TimelineBlock key={job.id} {...job} />
       })}
     </Box>
   )

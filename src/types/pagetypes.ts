@@ -14,12 +14,16 @@ export interface ProjectGridType {
 }
 
 export interface TimelineBlockType {
-  startDate: string
-  endDate: string
-  role: string
-  company: string
-  companyUrl?: string
-  bullets: string[]
+  frontmatter: {
+    startDate: string
+    endDate: string
+    role: string
+    isCurrent: boolean
+    title: string
+    companyUrl?: string
+  }
+  html: string
+  id: string
 }
 
 export interface TimelineType {
