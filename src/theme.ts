@@ -96,6 +96,7 @@ const theme = createTheme(colors, {
         body {
           background: ${colors.palette.colors.main};
           color: ${colors.palette.colors.isabelline};
+          font-family: ${bodyFont};
         }
       `,
     },
