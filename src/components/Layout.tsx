@@ -7,6 +7,7 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 // enabling smooth scroll
+// https://github.com/gatsbyjs/gatsby/issues/3318
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]')

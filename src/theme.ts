@@ -54,6 +54,8 @@ const colors = createTheme({
   },
 })
 
+const bodyFont = ['"Open Sans"', '"Helvetica Neue"', "Arial", "sans-serif"].join(",")
+
 const theme = createTheme(colors, {
   typography: {
     fontFamily: ['"Open Sans"', '"Helvetica Neue"', "Arial", "sans-serif"].join(","),
@@ -83,6 +85,10 @@ const theme = createTheme(colors, {
       fontWeight: 600,
       color: colors.palette.colors.heliotrope,
     },
+    button: {
+      fontFamily: "Montserrat, Verdana",
+      fontWeight: 600,
+    },
   },
   components: {
     MuiCssBaseline: {
@@ -92,6 +98,11 @@ const theme = createTheme(colors, {
           color: ${colors.palette.colors.isabelline};
         }
       `,
+    },
+    MuiTypography: {
+      defaultProps: {
+        fontFamily: bodyFont,
+      },
     },
     MuiButtonBase: {
       defaultProps: {
