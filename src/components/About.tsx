@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Grid, Box, Typography, Link, Skeleton } from "@mui/material"
+import { Grid, Box, Typography, Link, Skeleton, Toolbar } from "@mui/material"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import ExploreIcon from "@mui/icons-material/Explore"
 import SchoolIcon from "@mui/icons-material/School"
@@ -8,7 +8,8 @@ import Tag from "./Tag"
 
 const About = () => {
   return (
-    <Box pt={3} sx={{ minHeight: "100vh" }}>
+    <Box pt={3} sx={{ minHeight: "100vh" }} id="about">
+      <Toolbar />
       {/* fix the above so that it's exactly centered lol */}
       <Grid container spacing={8} direction={{ md: "row-reverse" }}>
         <Grid item md={8}>

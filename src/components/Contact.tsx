@@ -1,9 +1,10 @@
 import * as React from "react"
-import { Box, Link, Typography } from "@mui/material"
+import { Box, Link, Toolbar, Typography } from "@mui/material"
 
 const Contact = () => {
   return (
-    <Box py={10}>
+    <Box py={10} id="contact">
+      <Toolbar />
       <Typography variant="h3" component="h2" gutterBottom>
         Contact Me!
       </Typography>

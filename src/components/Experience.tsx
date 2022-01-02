@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, Toolbar } from "@mui/material"
 import WorkTimeline from "./WorkTimeline"
 import { TimelineBlockType } from "../types/pagetypes"
 
@@ -22,11 +22,19 @@ const jobs: TimelineBlockType[] = [
     company: "Workstream",
     bullets: ["Did a lot of cool things", "also did a lot of cool things here"],
   },
+  {
+    startDate: "Mar 2021",
+    endDate: "May 2021",
+    role: "Software Engineering Intern",
+    company: "Kadmon",
+    bullets: ["Did a lot of cool things", "also did a lot of cool things here"],
+  },
 ]
 
 const Experience = () => {
   return (
-    <Box>
+    <Box pt={6} id="experience">
+      <Toolbar />
       <Typography variant="h3" component="h2" gutterBottom>
         Work Experience
       </Typography>

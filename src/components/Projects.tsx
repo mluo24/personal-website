@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, Toolbar } from "@mui/material"
 import ProjectsGrid from "./ProjectsGrid"
 import { ProjectCardType } from "../types/pagetypes"
 
@@ -42,7 +42,8 @@ const projects: ProjectCardType[] = [
 
 const Projects = () => {
   return (
-    <Box my={2} py={2}>
+    <Box my={2} pt={6} id="projects">
+      <Toolbar />
       <Typography variant="h3" component="h2" gutterBottom>
         Projects
       </Typography>

@@ -29,7 +29,12 @@ const socials = [
   },
 ]
 
-const pages = ["About", "Experience", "Projects", "Contact"]
+const pages = [
+  { name: "About", url: "#" },
+  { name: "Experience", url: "#experience" },
+  { name: "Projects", url: "#projects" },
+  { name: "Contact", url: "#contact" },
+]
 
 // https://mui.com/components/app-bar/#scrolling
 function ElevationScroll(props: ChildrenPageTypes) {
@@ -122,8 +127,8 @@ const Navbar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -132,18 +137,19 @@ const Navbar = () => {
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
+                  key={page.name}
                   sx={{ my: 2, color: "white", display: "block" }}
+                  // component={Link}
+                  // to={page.url}
+                  href={page.url}
                 >
-                  {page}
+                  {page.name}
                 </Button>
               ))}
             </Box>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-      <Toolbar />
     </React.Fragment>
   )
 }
