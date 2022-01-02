@@ -1,5 +1,6 @@
 import * as React from "react"
-import { Grid, Box, Typography, Link, Skeleton, Toolbar } from "@mui/material"
+import { Grid, Box, Typography, Link, Skeleton, IconButton } from "@mui/material"
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import ExploreIcon from "@mui/icons-material/Explore"
 import SchoolIcon from "@mui/icons-material/School"
@@ -8,7 +9,7 @@ import Tag from "./Tag"
 
 const About = () => {
   return (
-    <Box id="about" mt={-5}>
+    <Box position="relative" id="about" mt={-5}>
       {/* kind of hacky solution for centering lol */}
       <Box display="flex" alignItems="center" sx={{ minHeight: "100vh" }}>
         <Grid container spacing={8} direction={{ md: "row-reverse" }}>
@@ -51,6 +52,16 @@ const About = () => {
             </Box>
           </Grid>
         </Grid>
+      </Box>
+      <Box
+        position="absolute"
+        sx={{ bottom: "5%", left: "50%", transform: "translate(-50%, 0)" }}
+      >
+        <Typography align="center">
+          <IconButton color="primary" href="#experience">
+            <KeyboardArrowDownIcon />
+          </IconButton>
+        </Typography>
       </Box>
     </Box>
   )
