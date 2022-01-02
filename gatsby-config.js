@@ -7,5 +7,14 @@ module.exports = {
     "gatsby-plugin-top-layout",
     "gatsby-plugin-mui-emotion",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
   ],
 }
