@@ -2,22 +2,25 @@ export interface ChildrenPageTypes {
   children: JSX.Element
 }
 
-export interface ProjectCardType extends ChildrenPageTypes {
+export interface MDXQueryNodeTypes {
+  body: string
+  id: string
+}
+
+export interface ProjectCardType extends MDXQueryNodeTypes {
   frontmatter: {
     title: string
     year: number
     technologies: string[]
     githubLink: string
   }
-  html: string
-  id: string
 }
 
 export interface ProjectGridType {
   projects: ProjectCardType[]
 }
 
-export interface TimelineBlockType {
+export interface TimelineBlockType extends MDXQueryNodeTypes {
   frontmatter: {
     startDate: string
     endDate: string
@@ -26,8 +29,6 @@ export interface TimelineBlockType {
     title: string
     companyUrl?: string
   }
-  html: string
-  id: string
 }
 
 export interface TimelineType {

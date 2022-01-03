@@ -7,12 +7,13 @@ import { graphql, useStaticQuery } from "gatsby"
 const Experience = () => {
   const data = useStaticQuery(graphql`
     query JobsQuery {
-      allMarkdownRemark(
+      allMdx(
         filter: { fileAbsolutePath: { regex: "/(jobs)/" } }
         sort: { fields: frontmatter___endDate, order: DESC }
       ) {
         nodes {
-          html
+          id
+          body
           frontmatter {
             endDate(formatString: "MMM YYYY")
             startDate(formatString: "MMM YYYY")
@@ -20,7 +21,6 @@ const Experience = () => {
             role
             title
           }
-          id
         }
       }
     }
@@ -33,7 +33,7 @@ const Experience = () => {
         Work Experience
       </Typography>
       <Box m={6}>
-        <WorkTimeline jobs={data.allMarkdownRemark.nodes} />
+        <WorkTimeline jobs={data.allMdx.nodes} />
       </Box>
     </Box>
   )

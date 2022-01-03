@@ -16,7 +16,7 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    "gatsby-transformer-remark",
-    // "gatsby-plugin-graphql-codegen",
+    "gatsby-plugin-mdx",
+    "gatsby-transformer-remark", // can remove this later
   ],
 }

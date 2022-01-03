@@ -6,12 +6,12 @@ import ProjectsGrid from "./ProjectsGrid"
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
-      allMarkdownRemark(
+      allMdx(
         filter: { fileAbsolutePath: { regex: "/(projects)/" }, frontmatter: {} }
         sort: { fields: frontmatter___year, order: DESC }
       ) {
         nodes {
-          html
+          body
           id
           frontmatter {
             githubLink
@@ -30,7 +30,7 @@ const Projects = () => {
       <Typography variant="h3" component="h2" gutterBottom>
         Projects
       </Typography>
-      <ProjectsGrid projects={data.allMarkdownRemark.nodes} />
+      <ProjectsGrid projects={data.allMdx.nodes} />
     </Box>
   )
 }

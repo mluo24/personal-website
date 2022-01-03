@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Box, Typography, styled } from "@mui/material"
 import { TimelineBlockType } from "../types/pagetypes"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Circle = styled("div")(({ theme }) => ({
   height: "2rem",
@@ -13,7 +14,7 @@ const Circle = styled("div")(({ theme }) => ({
   marginLeft: "-1rem",
 }))
 
-const TimelineBlock = ({ frontmatter, html }: TimelineBlockType) => {
+const TimelineBlock = ({ frontmatter, body }: TimelineBlockType) => {
   const { startDate, endDate, role, isCurrent, title } = frontmatter
 
   return (
@@ -32,7 +33,9 @@ const TimelineBlock = ({ frontmatter, html }: TimelineBlockType) => {
         <Typography variant="h5" component="h3" gutterBottom>
           {role} @ {title}
         </Typography>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Box>
+          <MDXRenderer>{body}</MDXRenderer>
+        </Box>
       </Box>
     </Box>
   )
