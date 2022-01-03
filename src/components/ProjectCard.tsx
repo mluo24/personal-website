@@ -12,14 +12,11 @@ import {
 import GitHubIcon from "@mui/icons-material/GitHub"
 import { ProjectCardType } from "../types/pagetypes"
 import Tag from "./Tag"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
-const ProjectCard = ({
-  title,
-  year,
-  tools,
-  githubLink,
-  children,
-}: ProjectCardType) => {
+const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
+  const { title, year, technologies, githubLink } = frontmatter
+
   return (
     <Card
       elevation={4}
@@ -44,7 +41,9 @@ const ProjectCard = ({
             {year}
           </Typography>
         </Box>
-        {children}
+        <Box>
+          <MDXRenderer>{body}</MDXRenderer>
+        </Box>
       </CardContent>
       <CardActions sx={{ mx: 1, mb: 1 }}>
         <Stack
@@ -54,7 +53,7 @@ const ProjectCard = ({
           alignItems="center"
           flexWrap="wrap"
         >
-          {tools.map((tool) => (
+          {technologies.map((tool) => (
             <Tag key={tool} label={tool} size="small" />
           ))}
         </Stack>

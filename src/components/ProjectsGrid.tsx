@@ -13,8 +13,8 @@ const ProjectsGrid = ({ projects }: ProjectGridType) => {
     >
       {projects.map((projects) => {
         return (
-          <Grid key={projects.title} item xs={4} sm={4} md={4}>
-            <ProjectCard key={projects.title} {...projects} />
+          <Grid key={projects.id} item xs={4} sm={4} md={4}>
+            <ProjectCard key={projects.id} {...projects} />
           </Grid>
         )
       })}
