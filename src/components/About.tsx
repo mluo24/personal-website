@@ -21,6 +21,7 @@ const skills: string[] = [
   "Flask",
   "Rails",
   "Node.js",
+  "Express",
   "MUI",
   "Laravel",
   "HTML/CSS",
