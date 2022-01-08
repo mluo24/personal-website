@@ -46,14 +46,11 @@ const About = () => {
               and biology. I aspire to be a software engineer when I graduate and
               will also be pursuing higher education computational biology in the
               future.
-              {/* <Link component={GatsbyLink} to="/about" underline="hover">
-                Go to the about page
-              </Link> */}
             </Typography>
             <Typography variant="body1" gutterBottom>
               Currently, I am involved as a software developer for Cornell Design
-              &amp; Tech Initative, a member of the WICC Technical Committee, and a
-              consultant for CS 3110: Data Structures and Functional Programming.
+              &amp; Tech Initative and a consultant for CS 3110: Data Structures and
+              Functional Programming.
             </Typography>
             <Typography variant="body1" gutterBottom>
               These are some of my skills and languages/technologies I am familiar
