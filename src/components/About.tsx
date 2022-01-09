@@ -1,5 +1,13 @@
 import * as React from "react"
-import { Grid, Box, Typography, Skeleton, Stack, IconButton } from "@mui/material"
+import {
+  Grid,
+  Box,
+  Typography,
+  Skeleton,
+  Stack,
+  IconButton,
+  Link,
+} from "@mui/material"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import ExploreIcon from "@mui/icons-material/Explore"
@@ -49,9 +57,12 @@ const About = () => {
               future.
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Currently, I am involved as a software developer for Cornell Design
-              &amp; Tech Initative and a consultant for CS 3110: Data Structures and
-              Functional Programming.
+              Currently, I am involved as a full-stack developer for{" "}
+              <Link href="https://www.cornelldti.org/" target="_blank">
+                Cornell Design &amp; Tech Initative
+              </Link>{" "}
+              and a consultant for CS 3110: Data Structures and Functional
+              Programming.
             </Typography>
             <Typography variant="body1" gutterBottom>
               These are some of my skills and languages/technologies I am familiar
