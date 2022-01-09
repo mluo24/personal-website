@@ -15,7 +15,8 @@ const Projects = () => {
           id
           frontmatter {
             githubLink
-            year
+            year(formatString: "YYYY")
+            link
             technologies
             title
           }
