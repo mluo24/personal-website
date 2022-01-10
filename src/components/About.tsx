@@ -36,6 +36,7 @@ const skills: string[] = [
   "Git",
   "REST",
   "scikit-learn",
+  "d3",
 ]
 
 const About = () => {
