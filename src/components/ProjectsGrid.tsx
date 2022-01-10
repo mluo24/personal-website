@@ -8,7 +8,7 @@ const ProjectsGrid = ({ projects }: ProjectGridType) => {
     <Grid
       container
       px={2}
-      spacing={{ xs: 4, md: 5 }}
+      spacing={{ xs: 2, md: 3 }}
       columns={{ xs: 4, sm: 8, md: 12 }}
     >
       {projects.map((projects) => {

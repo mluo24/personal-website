@@ -1,11 +1,43 @@
 import * as React from "react"
-import { Grid, Box, Typography, Link, Skeleton, IconButton } from "@mui/material"
+import {
+  Grid,
+  Box,
+  Typography,
+  Skeleton,
+  Stack,
+  IconButton,
+  Link,
+} from "@mui/material"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import ExploreIcon from "@mui/icons-material/Explore"
 import SchoolIcon from "@mui/icons-material/School"
-import { Link as GatsbyLink } from "gatsby"
 import Tag from "./Tag"
+
+const skills: string[] = [
+  "Java",
+  "Python",
+  "JavaScript",
+  "TypeScript",
+  "OCaml",
+  "PHP",
+  "C++",
+  "R",
+  "SQL",
+  "Django",
+  "React",
+  "Flask",
+  "Rails",
+  "Node.js",
+  "Express",
+  "MUI",
+  "Laravel",
+  "HTML/CSS",
+  "Git",
+  "REST",
+  "scikit-learn",
+  "d3",
+]
 
 const About = () => {
   return (
@@ -17,13 +49,31 @@ const About = () => {
             <Typography variant="h2" component="h1" gutterBottom>
               Hi, I'm Miranda!
             </Typography>
-            <Typography variant="body1">
-              This is some body text.{" "}
-              <Link component={GatsbyLink} to="/about" underline="hover">
-                Go to the about page
-              </Link>
+            <Typography variant="body1" gutterBottom>
+              I am a sophomore at Cornell University majoring in computer science and
+              biological sciences. Some of my interests include full-stack
+              development and the intersections between computer science, medicine,
+              and biology. I aspire to be a software engineer when I graduate and
+              will also be pursuing higher education computational biology in the
+              future.
             </Typography>
-            <Tag label="Java" />
+            <Typography variant="body1" gutterBottom>
+              Currently, I am involved as a full-stack developer for{" "}
+              <Link href="https://www.cornelldti.org/" target="_blank">
+                Cornell Design &amp; Tech Initative
+              </Link>{" "}
+              and a consultant for CS 3110: Data Structures and Functional
+              Programming.
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              These are some of my skills and languages/technologies I am familiar
+              with:
+            </Typography>
+            <Stack direction="row" spacing={1} flexWrap="wrap">
+              {skills.map((skill) => (
+                <Tag label={skill} key={skill} />
+              ))}
+            </Stack>
           </Grid>
           <Grid item md>
             <Skeleton

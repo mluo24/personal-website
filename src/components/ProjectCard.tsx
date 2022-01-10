@@ -10,12 +10,13 @@ import {
   Stack,
 } from "@mui/material"
 import GitHubIcon from "@mui/icons-material/GitHub"
+import LinkIcon from "@mui/icons-material/Link"
 import { ProjectCardType } from "../types/pagetypes"
 import Tag from "./Tag"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
-  const { title, year, technologies, githubLink } = frontmatter
+  const { title, year, technologies, githubLink, link } = frontmatter
 
   return (
     <Card
@@ -58,12 +59,24 @@ const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
           ))}
         </Stack>
         <Box flexGrow={1} />
-        <Box>
+        <Box display="flex">
+          {link && (
+            <IconButton
+              href={link}
+              target="_blank"
+              color="primary"
+              aria-label="link"
+              size="small"
+            >
+              <LinkIcon />
+            </IconButton>
+          )}
           <IconButton
             href={githubLink}
             target="_blank"
             color="primary"
             aria-label="github"
+            size="small"
           >
             <GitHubIcon />
           </IconButton>

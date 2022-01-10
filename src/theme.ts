@@ -117,6 +117,11 @@ const theme = createTheme(colors, {
         },
       },
     },
+    MuiLink: {
+      defaultProps: {
+        underline: "hover",
+      },
+    },
   },
 })
 

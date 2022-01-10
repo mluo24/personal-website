@@ -10,9 +10,10 @@ export interface MDXQueryNodeTypes {
 export interface ProjectCardType extends MDXQueryNodeTypes {
   frontmatter: {
     title: string
-    year: number
+    year: string
     technologies: string[]
     githubLink: string
+    link?: string
   }
 }
 
