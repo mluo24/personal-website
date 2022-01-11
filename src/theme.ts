@@ -1,10 +1,11 @@
-import { red } from "@mui/material/colors"
+import { blueGrey, red } from "@mui/material/colors"
 import { createTheme } from "@mui/material/styles"
 
 declare module "@mui/material/styles" {
   interface Palette {
     colors: Palette["primary"]
   }
+
   interface PaletteOptions {
     colors: PaletteOptions["primary"]
   }
@@ -18,6 +19,7 @@ declare module "@mui/material/styles" {
     blackShadows?: string
     isabelline?: string
   }
+
   interface SimplePaletteColorOptions {
     darkest?: string
     spaceCadet?: string
@@ -29,6 +31,7 @@ declare module "@mui/material/styles" {
   }
 }
 
+// dark theme
 const colors = createTheme({
   palette: {
     colors: {
@@ -42,14 +45,21 @@ const colors = createTheme({
       isabelline: "#F2E9E4",
     },
     primary: {
-      main: "#E0FBFC",
-      dark: "#97d1f2",
+      main: "#3e65fb",
     },
     secondary: {
-      main: "#19857b",
+      main: "#5a6583",
     },
     error: {
-      main: red.A400,
+      main: red["A400"],
+    },
+    text: {
+      primary: "#d2d2d7",
+      secondary: blueGrey["300"],
+    },
+    background: {
+      paper: "#1e2745",
+      default: "#141a32",
     },
   },
 })
@@ -59,31 +69,25 @@ const bodyFont = ['"Open Sans"', '"Helvetica Neue"', "Arial", "sans-serif"].join
 const theme = createTheme(colors, {
   typography: {
     fontFamily: ['"Open Sans"', '"Helvetica Neue"', "Arial", "sans-serif"].join(","),
-    color: colors.palette.colors.isabelline,
     h1: {
       fontFamily: "Montserrat, Verdana",
       fontWeight: 600,
-      color: colors.palette.colors.heliotrope,
     },
     h2: {
       fontFamily: "Montserrat, Verdana",
       fontWeight: 600,
-      color: colors.palette.colors.heliotrope,
     },
     h3: {
       fontFamily: "Montserrat, Verdana",
       fontWeight: 600,
-      color: colors.palette.colors.heliotrope,
     },
     h4: {
       fontFamily: "Montserrat, Verdana",
       fontWeight: 600,
-      color: colors.palette.colors.heliotrope,
     },
     h5: {
       fontFamily: "Montserrat, Verdana",
       fontWeight: 600,
-      color: colors.palette.colors.heliotrope,
     },
     button: {
       fontFamily: "Montserrat, Verdana",
@@ -94,8 +98,6 @@ const theme = createTheme(colors, {
     MuiCssBaseline: {
       styleOverrides: `
         body {
-          background: ${colors.palette.colors.main};
-          color: ${colors.palette.colors.isabelline};
           font-family: ${bodyFont};
         }
       `,
