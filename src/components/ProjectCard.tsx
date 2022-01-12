@@ -7,7 +7,6 @@ import {
   CardContent,
   IconButton,
   Typography,
-  Stack,
 } from "@mui/material"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
@@ -15,6 +14,7 @@ import { ProjectCardType } from "../types/pagetypes"
 import Tag from "./Tag"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import neutral from "../themeColors"
+import WrapStack from "./WrapStack"
 
 const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
   const { title, year, technologies, githubLink, link } = frontmatter
@@ -51,17 +51,11 @@ const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
         </Box>
       </CardContent>
       <CardActions sx={{ mx: 1, mb: 1 }}>
-        <Stack
-          direction="row"
-          spacing={0.5}
-          display="flex"
-          alignItems="center"
-          flexWrap="wrap"
-        >
+        <WrapStack>
           {technologies.map((tool) => (
             <Tag key={tool} label={tool} size="small" />
           ))}
-        </Stack>
+        </WrapStack>
         <Box flexGrow={1} />
         <Box display="flex">
           {link && (

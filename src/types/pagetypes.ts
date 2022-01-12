@@ -1,5 +1,11 @@
+import React from "react"
+
 export interface ChildrenPageTypes {
   children: JSX.Element
+}
+
+export interface MultipleChildrenTypes {
+  children: React.ReactNode
 }
 
 export interface MDXQueryNodeTypes {

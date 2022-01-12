@@ -1,18 +1,11 @@
 import * as React from "react"
-import {
-  Grid,
-  Box,
-  Typography,
-  Skeleton,
-  Stack,
-  IconButton,
-  Link,
-} from "@mui/material"
+import { Grid, Box, Typography, Skeleton, IconButton, Link } from "@mui/material"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import ExploreIcon from "@mui/icons-material/Explore"
 import SchoolIcon from "@mui/icons-material/School"
 import Tag from "./Tag"
+import WrapStack from "./WrapStack"
 
 const skills: string[] = [
   "Java",
@@ -49,7 +42,7 @@ const About = () => {
             <Typography variant="h2" component="h1" color="primary" gutterBottom>
               Hi, I'm Miranda!
             </Typography>
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body1" mb={2}>
               I am a sophomore at Cornell University majoring in computer science and
               biological sciences. Some of my interests include full-stack
               development and the intersections between computer science, medicine,
@@ -57,7 +50,7 @@ const About = () => {
               will also be pursuing higher education computational biology in the
               future.
             </Typography>
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body1" mb={2}>
               Currently, I am involved as a full-stack developer for{" "}
               <Link href="https://www.cornelldti.org/" target="_blank">
                 Cornell Design &amp; Tech Initative
@@ -65,15 +58,15 @@ const About = () => {
               and a consultant for CS 3110: Data Structures and Functional
               Programming.
             </Typography>
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body1" mb={2}>
               These are some of my skills and languages/technologies I am familiar
               with:
             </Typography>
-            <Stack direction="row" spacing={1} flexWrap="wrap">
+            <WrapStack>
               {skills.map((skill) => (
                 <Tag label={skill} key={skill} />
               ))}
-            </Stack>
+            </WrapStack>
           </Grid>
           <Grid item md>
             <Skeleton
