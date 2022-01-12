@@ -45,17 +45,17 @@ const colors = createTheme({
       isabelline: "#F2E9E4",
     },
     primary: {
-      main: "#3e65fb",
+      main: "#5F80FB",
     },
     secondary: {
-      main: "#5a6583",
+      main: "#738cba",
     },
     error: {
       main: red["A400"],
     },
     text: {
-      primary: "#d2d2d7",
-      secondary: blueGrey["300"],
+      primary: blueGrey["200"],
+      secondary: blueGrey["200"],
     },
     background: {
       paper: "#1e2745",
@@ -113,10 +113,18 @@ const theme = createTheme(colors, {
       },
     },
     MuiButton: {
+      defaultProps: {
+        color: "secondary",
+      },
       styleOverrides: {
         outlined: {
           borderRadius: 8,
         },
+      },
+    },
+    MuiIconButton: {
+      defaultProps: {
+        color: "secondary",
       },
     },
     MuiLink: {

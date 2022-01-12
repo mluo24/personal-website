@@ -67,8 +67,7 @@ const Navbar = () => {
         <AppBar
           position="fixed"
           sx={{
-            backgroundColor: "colors.darkest",
-            color: "colors.isabelline",
+            backgroundColor: "background.default",
           }}
           elevation={0}
         >
@@ -85,7 +84,6 @@ const Navbar = () => {
               {socials.map((social) => (
                 <IconButton
                   key={social.url}
-                  color="primary"
                   href={social.url}
                   target="_blank"
                   sx={{ mx: 0.5 }}

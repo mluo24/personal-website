@@ -23,8 +23,8 @@ const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
       elevation={4}
       sx={{
         px: 0.5,
-        bgcolor: "colors.spaceCadet",
-        color: "colors.isabelline",
+        // bgcolor: "colors.spaceCadet",
+        // color: "colors.isabelline",
         borderRadius: "10px",
       }}
     >

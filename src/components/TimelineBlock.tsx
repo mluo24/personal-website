@@ -4,14 +4,14 @@ import { TimelineBlockType } from "../types/pagetypes"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Circle = styled("div")(({ theme }) => ({
-  height: "2rem",
-  width: "2rem",
-  backgroundColor: theme.palette.colors.heliotrope,
+  height: "1.2rem",
+  width: "1.2rem",
+  backgroundColor: theme.palette.primary.main,
   padding: 8,
   borderRadius: "100%",
   position: "absolute",
   left: "20%",
-  marginLeft: "-1rem",
+  marginLeft: "-0.6rem",
 }))
 
 const TimelineBlock = ({ frontmatter, body }: TimelineBlockType) => {

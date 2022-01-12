@@ -13,7 +13,7 @@ const WorkTimeline = ({ jobs }: TimelineType) => {
           display: "block",
           width: "1px",
           height: "100%",
-          background: "#4A4E69",
+          bgcolor: "background.paper",
           position: "absolute",
           left: "20%",
           top: 0,

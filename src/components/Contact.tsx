@@ -9,12 +9,7 @@ const Contact = () => {
         Contact Me!
       </Typography>
       <Box mx={20} mt={10}>
-        <Typography
-          variant="h4"
-          color="colors.blackShadows"
-          align="center"
-          gutterBottom
-        >
+        <Typography variant="h4" align="center" gutterBottom>
           Want to get in touch?
         </Typography>
         <Typography sx={{ mb: 5 }}>
