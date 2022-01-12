@@ -13,6 +13,7 @@ import GitHubIcon from "@mui/icons-material/GitHub"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import { useScrollTrigger } from "@mui/material"
 import { ChildrenPageTypes } from "../types/pagetypes"
+import neutral from "../themeColors"
 
 const socials = [
   {
@@ -136,7 +137,11 @@ const Navbar = () => {
               {pages.map((page) => (
                 <Button
                   key={page.name}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    my: 2,
+                    color: neutral["50"],
+                    display: "block",
+                  }}
                   // component={Link}
                   // to={page.url}
                   href={page.url}

@@ -46,7 +46,7 @@ const About = () => {
       <Box display="flex" alignItems="center" sx={{ minHeight: "100vh" }}>
         <Grid container spacing={8} direction={{ md: "row-reverse" }}>
           <Grid item md={8}>
-            <Typography variant="h2" component="h1" gutterBottom>
+            <Typography variant="h2" component="h1" color="primary" gutterBottom>
               Hi, I'm Miranda!
             </Typography>
             <Typography variant="body1" gutterBottom>

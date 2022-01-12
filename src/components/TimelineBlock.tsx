@@ -2,6 +2,7 @@ import * as React from "react"
 import { Box, Typography, styled } from "@mui/material"
 import { TimelineBlockType } from "../types/pagetypes"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import neutral from "../themeColors"
 
 const Circle = styled("div")(({ theme }) => ({
   height: "1.2rem",
@@ -24,13 +25,18 @@ const TimelineBlock = ({ frontmatter, body }: TimelineBlockType) => {
         <Typography
           variant="subtitle1"
           align="right"
-          sx={{ fontFamily: "Inconsolata" }}
+          sx={{ fontFamily: "Inconsolata", color: neutral["100"] }}
         >
           {startDate} - {isCurrent ? "Present" : endDate}
         </Typography>
       </Box>
       <Box pl={5} pb={1} sx={{ marginLeft: "20%", marginTop: -3.5 }}>
-        <Typography variant="h5" component="h3" gutterBottom>
+        <Typography
+          variant="h5"
+          component="h3"
+          sx={{ color: neutral["100"] }}
+          gutterBottom
+        >
           {role} @ {title}
         </Typography>
         <Box>

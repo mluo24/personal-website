@@ -10,10 +10,11 @@ import {
   Stack,
 } from "@mui/material"
 import GitHubIcon from "@mui/icons-material/GitHub"
-import LinkIcon from "@mui/icons-material/Link"
+import OpenInNewIcon from "@mui/icons-material/OpenInNew"
 import { ProjectCardType } from "../types/pagetypes"
 import Tag from "./Tag"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import neutral from "../themeColors"
 
 const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
   const { title, year, technologies, githubLink, link } = frontmatter
@@ -23,21 +24,24 @@ const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
       elevation={4}
       sx={{
         px: 0.5,
-        // bgcolor: "colors.spaceCadet",
-        // color: "colors.isabelline",
         borderRadius: "10px",
       }}
     >
       <CardContent>
         <Box component="header" display="flex">
-          <Typography variant="h5" component="h4" gutterBottom>
+          <Typography
+            variant="h5"
+            component="h4"
+            sx={{ color: neutral["100"] }}
+            gutterBottom
+          >
             {title}
           </Typography>
           <Box flexGrow={1} />
           <Typography
             variant="subtitle1"
             component="p"
-            sx={{ fontFamily: "Inconsolata" }}
+            sx={{ fontFamily: "Inconsolata", color: neutral["100"] }}
           >
             {year}
           </Typography>
@@ -68,7 +72,7 @@ const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
               aria-label="link"
               size="small"
             >
-              <LinkIcon />
+              <OpenInNewIcon />
             </IconButton>
           )}
           <IconButton
