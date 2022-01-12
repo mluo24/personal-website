@@ -22,11 +22,7 @@ const TimelineBlock = ({ frontmatter, body }: TimelineBlockType) => {
     <Box position="relative">
       <Circle />
       <Box pr={4} sx={{ width: "20%" }}>
-        <Typography
-          variant="subtitle1"
-          align="right"
-          sx={{ fontFamily: "Inconsolata", color: neutral["100"] }}
-        >
+        <Typography variant="subtitle1" align="right" sx={{ color: neutral["100"] }}>
           {startDate} - {isCurrent ? "Present" : endDate}
         </Typography>
       </Box>

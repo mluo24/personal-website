@@ -41,7 +41,7 @@ const ProjectCard = ({ frontmatter, body }: ProjectCardType) => {
           <Typography
             variant="subtitle1"
             component="p"
-            sx={{ fontFamily: "Inconsolata", color: neutral["100"] }}
+            sx={{ color: neutral["100"] }}
           >
             {year}
           </Typography>

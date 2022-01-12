@@ -66,48 +66,48 @@ const colors = createTheme({
 })
 
 const bodyFont = ['"Open Sans"', '"Helvetica Neue"', "Arial", "sans-serif"].join(",")
+const headingFont = "Montserrat, Verdana, sans-serif"
+const subFont = "Inconsolata, 'Courier New', monospace"
 
+// top level fontFamily still does not work
 const theme = createTheme(colors, {
   typography: {
-    fontFamily: ['"Open Sans"', '"Helvetica Neue"', "Arial", "sans-serif"].join(","),
+    fontFamily: bodyFont,
     h1: {
-      fontFamily: "Montserrat, Verdana",
+      fontFamily: headingFont,
       fontWeight: 600,
     },
     h2: {
-      fontFamily: "Montserrat, Verdana",
+      fontFamily: headingFont,
       fontWeight: 600,
     },
     h3: {
-      fontFamily: "Montserrat, Verdana",
+      fontFamily: headingFont,
       fontWeight: 600,
     },
     h4: {
-      fontFamily: "Montserrat, Verdana",
+      fontFamily: headingFont,
       fontWeight: 600,
     },
     h5: {
-      fontFamily: "Montserrat, Verdana",
+      fontFamily: subFont,
       fontWeight: 600,
     },
+    subtitle1: {
+      fontFamily: subFont,
+    },
+    body1: {
+      fontFamily: bodyFont,
+    },
+    body2: {
+      fontFamily: bodyFont,
+    },
     button: {
-      fontFamily: "Montserrat, Verdana",
+      fontFamily: headingFont,
       fontWeight: 600,
     },
   },
   components: {
-    MuiCssBaseline: {
-      styleOverrides: `
-        body {
-          font-family: ${bodyFont};
-        }
-      `,
-    },
-    MuiTypography: {
-      defaultProps: {
-        fontFamily: bodyFont,
-      },
-    },
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
