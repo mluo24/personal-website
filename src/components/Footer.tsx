@@ -21,7 +21,7 @@ const Footer = () => {
         <Link href="https://mui.com/" target="_blank">
           MUI
         </Link>{" "}
-        and
+        and{" "}
         <Link href="https://www.gatsbyjs.com/" target="_blank">
           Gatsby
         </Link>

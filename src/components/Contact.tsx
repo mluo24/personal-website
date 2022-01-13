@@ -14,7 +14,7 @@ const Contact = () => {
       >
         Contact Me!
       </Typography>
-      <Box mx={20} mt={10}>
+      <Box mx={{ xs: 2, md: 15 }} mt={10}>
         <Typography
           variant="h4"
           align="center"

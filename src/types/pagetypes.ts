@@ -41,3 +41,8 @@ export interface TimelineBlockType extends MDXQueryNodeTypes {
 export interface TimelineType {
   jobs: TimelineBlockType[]
 }
+
+export interface IconInfoType {
+  icon: JSX.Element
+  content: string
+}

@@ -1,5 +1,13 @@
 import * as React from "react"
-import { Grid, Box, Typography, IconButton, Link } from "@mui/material"
+import {
+  Grid,
+  Box,
+  Typography,
+  IconButton,
+  Link,
+  styled,
+  Toolbar,
+} from "@mui/material"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import ExploreIcon from "@mui/icons-material/Explore"
@@ -7,6 +15,7 @@ import SchoolIcon from "@mui/icons-material/School"
 import Tag from "./Tag"
 import WrapStack from "./WrapStack"
 import { StaticImage } from "gatsby-plugin-image"
+import { IconInfoType } from "../types/pagetypes"
 
 const skills: string[] = [
   "Java",
@@ -33,12 +42,78 @@ const skills: string[] = [
   "d3",
 ]
 
+const sideInfo: IconInfoType[] = [
+  {
+    icon: <SchoolIcon />,
+    content: "Cornell University '24",
+  },
+  {
+    icon: <LocationOnIcon />,
+    content: "NYC Metropolitan Area",
+  },
+  {
+    icon: <ExploreIcon />,
+    content: "Running, Hiking, Art, Clarinet, Piano, Video Games",
+  },
+]
+
+const ImageWrapper = styled(Box)(({ theme }) => ({
+  ".selfimg": {
+    borderRadius: "100%",
+    [theme.breakpoints.up("xs")]: {
+      width: 90,
+      height: 90,
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: 180,
+      height: 180,
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "100%",
+      maxHeight: 0,
+      paddingBottom: "100%",
+    },
+  },
+}))
+
+const IconInfo = ({ icon, content }: IconInfoType) => {
+  return (
+    <Box display="flex" mt={1} sx={{ columnGap: 1 }}>
+      {icon}
+      <Typography variant="body2" sx={{ alignSelf: "center" }}>
+        {content}
+      </Typography>
+    </Box>
+  )
+}
+
 const About = () => {
   return (
-    <Box position="relative" id="about" mt={-5}>
+    <Box position="relative" id="about" mt={{ xs: 0, lg: -5 }}>
+      <Toolbar sx={{ display: { xs: "block", lg: "none" } }} />
       {/* kind of hacky solution for centering lol */}
       <Box display="flex" alignItems="center" sx={{ minHeight: "100vh" }}>
-        <Grid container spacing={8} direction={{ md: "row-reverse" }}>
+        <Grid container spacing={8}>
+          <Grid
+            item
+            md
+            display={{ xs: "flex", md: "block" }}
+            alignItems="center"
+            sx={{ columnGap: { xs: 0, sm: 4 } }}
+          >
+            <ImageWrapper>
+              <StaticImage
+                className="selfimg"
+                alt="A picture of me!"
+                src="../images/miranda.jpg"
+              />
+            </ImageWrapper>
+            <Box>
+              {sideInfo.map((e, i) => {
+                return <IconInfo {...e} key={i} />
+              })}
+            </Box>
+          </Grid>
           <Grid item md={8}>
             <Typography variant="h2" component="h1" color="primary" gutterBottom>
               &#128075; Hi, I'm Miranda!
@@ -54,7 +129,7 @@ const About = () => {
             <Typography variant="body1" mb={2}>
               Currently, I am involved as a full-stack developer for{" "}
               <Link href="https://www.cornelldti.org/" target="_blank">
-                Cornell Design &amp; Tech Initative
+                Cornell Design &amp; Tech Initiative
               </Link>{" "}
               and a consultant for CS 3110: Data Structures and Functional
               Programming.
@@ -69,43 +144,16 @@ const About = () => {
               ))}
             </WrapStack>
           </Grid>
-          <Grid item md>
-            <StaticImage
-              style={{ maxHeight: 0, paddingBottom: "100%", borderRadius: "100%" }}
-              alt="A photo of me!"
-              src="../images/miranda.jpg"
-            />
-            {/* make these into components plz?? */}
-            <Box display="flex" mt={2} sx={{ columnGap: 1 }}>
-              <SchoolIcon />
-              <Typography variant="body2" sx={{ alignSelf: "center" }}>
-                Cornell University '24
-              </Typography>
-            </Box>
-            <Box display="flex" mt={1} sx={{ columnGap: 1 }}>
-              <LocationOnIcon />
-              <Typography variant="body2" sx={{ alignSelf: "center" }}>
-                NYC Metropolitan Area
-              </Typography>
-            </Box>
-            <Box display="flex" mt={1} sx={{ columnGap: 1 }}>
-              <ExploreIcon />
-              <Typography variant="body2" sx={{ alignSelf: "center" }}>
-                Running, Hiking, Art, Clarinet, Piano, Video Games
-              </Typography>
-            </Box>
-          </Grid>
         </Grid>
       </Box>
       <Box
         position="absolute"
+        display={{ xs: "none", lg: "initial" }}
         sx={{ bottom: "5%", left: "50%", transform: "translate(-50%, 0)" }}
       >
-        <Typography align="center">
-          <IconButton color="primary" href="#experience">
-            <KeyboardArrowDownIcon />
-          </IconButton>
-        </Typography>
+        <IconButton color="primary" href="#experience">
+          <KeyboardArrowDownIcon />
+        </IconButton>
       </Box>
     </Box>
   )
