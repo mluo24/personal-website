@@ -1,11 +1,12 @@
 import * as React from "react"
-import { Grid, Box, Typography, Skeleton, IconButton, Link } from "@mui/material"
+import { Grid, Box, Typography, IconButton, Link } from "@mui/material"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import ExploreIcon from "@mui/icons-material/Explore"
 import SchoolIcon from "@mui/icons-material/School"
 import Tag from "./Tag"
 import WrapStack from "./WrapStack"
+import { StaticImage } from "gatsby-plugin-image"
 
 const skills: string[] = [
   "Java",
@@ -40,7 +41,7 @@ const About = () => {
         <Grid container spacing={8} direction={{ md: "row-reverse" }}>
           <Grid item md={8}>
             <Typography variant="h2" component="h1" color="primary" gutterBottom>
-              Hi, I'm Miranda!
+              &#128075; Hi, I'm Miranda!
             </Typography>
             <Typography variant="body1" mb={2}>
               I am a sophomore at Cornell University majoring in computer science and
@@ -69,12 +70,12 @@ const About = () => {
             </WrapStack>
           </Grid>
           <Grid item md>
-            <Skeleton
-              variant="circular"
-              sx={{ paddingBottom: "100%" }}
-              animation={false}
+            <StaticImage
+              style={{ maxHeight: 0, paddingBottom: "100%", borderRadius: "100%" }}
+              alt="A photo of me!"
+              src="../images/miranda.jpg"
             />
-            {/* make these into components plz */}
+            {/* make these into components plz?? */}
             <Box display="flex" mt={2} sx={{ columnGap: 1 }}>
               <SchoolIcon />
               <Typography variant="body2" sx={{ alignSelf: "center" }}>
