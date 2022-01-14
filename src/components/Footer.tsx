@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Link, Typography } from "@mui/material"
+import { Box, Container, Link, Typography } from "@mui/material"
 
 const Footer = () => {
   return (
@@ -12,21 +12,23 @@ const Footer = () => {
         mt: "auto",
       }}
     >
-      <Typography align="center">
-        Made with ❤ by{" "}
-        <Link href="https://github.com/mluo24/personal-website" target="_blank">
-          Miranda Luo
-        </Link>
-        . Site made with{" "}
-        <Link href="https://mui.com/" target="_blank">
-          MUI
-        </Link>{" "}
-        and{" "}
-        <Link href="https://www.gatsbyjs.com/" target="_blank">
-          Gatsby
-        </Link>
-        .
-      </Typography>
+      <Container>
+        <Typography align="center">
+          Made with ❤ by{" "}
+          <Link href="https://github.com/mluo24/personal-website" target="_blank">
+            Miranda Luo
+          </Link>
+          . Site made with{" "}
+          <Link href="https://mui.com/" target="_blank">
+            MUI
+          </Link>{" "}
+          and{" "}
+          <Link href="https://www.gatsbyjs.com/" target="_blank">
+            Gatsby
+          </Link>
+          .
+        </Typography>
+      </Container>
     </Box>
   )
 }

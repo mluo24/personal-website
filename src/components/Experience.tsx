@@ -38,7 +38,7 @@ const Experience = () => {
       >
         Work Experience
       </Typography>
-      <Box m={6}>
+      <Box m={4}>
         <WorkTimeline jobs={data.allMdx.nodes} />
       </Box>
     </Box>

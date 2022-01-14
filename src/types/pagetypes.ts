@@ -36,6 +36,7 @@ export interface TimelineBlockType extends MDXQueryNodeTypes {
     title: string
     companyUrl?: string
   }
+  margin?: string | number
 }
 
 export interface TimelineType {
