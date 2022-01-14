@@ -1,9 +1,9 @@
 import * as React from "react"
 
 import { Box, Typography, Toolbar } from "@mui/material"
-import WorkTimeline from "./WorkTimeline"
+import WorkTimeline from "../WorkTimeline"
 import { graphql, useStaticQuery } from "gatsby"
-import neutral from "../themeColors"
+import neutral from "../../themeColors"
 
 const Experience = () => {
   const data = useStaticQuery(graphql`

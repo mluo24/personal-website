@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Box, Link, Toolbar, Typography } from "@mui/material"
-import neutral from "../themeColors"
+import neutral from "../../themeColors"
 
 const Contact = () => {
   return (

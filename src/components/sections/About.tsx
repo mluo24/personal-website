@@ -12,10 +12,10 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import ExploreIcon from "@mui/icons-material/Explore"
 import SchoolIcon from "@mui/icons-material/School"
-import Tag from "./Tag"
-import WrapStack from "./WrapStack"
+import Tag from "../Tag"
+import WrapStack from "../WrapStack"
 import { StaticImage } from "gatsby-plugin-image"
-import { IconInfoType } from "../types/pagetypes"
+import { IconInfoType } from "../../types/pagetypes"
 
 const skills: string[] = [
   "Java",

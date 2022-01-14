@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Box, Typography, Toolbar } from "@mui/material"
 import { useStaticQuery, graphql } from "gatsby"
-import ProjectsGrid from "./ProjectsGrid"
-import neutral from "../themeColors"
+import ProjectsGrid from "../ProjectsGrid"
+import neutral from "../../themeColors"
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
