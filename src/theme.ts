@@ -2,49 +2,9 @@ import { red } from "@mui/material/colors"
 import { createTheme } from "@mui/material/styles"
 import neutral from "./themeColors"
 
-declare module "@mui/material/styles" {
-  interface Palette {
-    colors: Palette["primary"]
-  }
-
-  interface PaletteOptions {
-    colors: PaletteOptions["primary"]
-  }
-
-  interface PaletteColor {
-    darkest?: string
-    spaceCadet?: string
-    independence?: string
-    oldLavender?: string
-    heliotrope?: string
-    blackShadows?: string
-    isabelline?: string
-  }
-
-  interface SimplePaletteColorOptions {
-    darkest?: string
-    spaceCadet?: string
-    independence?: string
-    oldLavender?: string
-    heliotrope?: string
-    blackShadows?: string
-    isabelline?: string
-  }
-}
-
 // dark theme
 const colors = createTheme({
   palette: {
-    colors: {
-      main: "#22223B",
-      darkest: "#22223B",
-      spaceCadet: "#363852",
-      independence: "#4A4E69",
-      oldLavender: "#726D81",
-      heliotrope: "#9A8C98",
-      blackShadows: "#C6BBBE",
-      isabelline: "#F2E9E4",
-    },
     primary: {
       main: "#B8D0FF",
     },
