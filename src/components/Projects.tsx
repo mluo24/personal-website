@@ -29,12 +29,7 @@ const Projects = () => {
   return (
     <Box my={2} pt={6} id="projects">
       <Toolbar />
-      <Typography
-        variant="h3"
-        component="h2"
-        sx={{ color: neutral["50"] }}
-        gutterBottom
-      >
+      <Typography variant="h3" component="h2" sx={{ color: neutral["50"] }} mb={5}>
         Projects
       </Typography>
       <ProjectsGrid projects={data.allMdx.nodes} />

@@ -1,13 +1,20 @@
 import * as React from "react"
-import { Box, Typography, styled } from "@mui/material"
+import { Box, Typography, styled as muiStyled } from "@mui/material"
 import { TimelineBlockType } from "../types/pagetypes"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import neutral from "../themeColors"
+import styled from "@emotion/styled"
+
+const MDXFormat = styled.div`
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+`
 
 const TimelineBlock = ({ frontmatter, body, margin }: TimelineBlockType) => {
   const { startDate, endDate, role, isCurrent, title } = frontmatter
 
-  const Circle = styled("div")(({ theme }) => ({
+  const Circle = muiStyled("div")(({ theme }) => ({
     height: "1.2rem",
     width: "1.2rem",
     backgroundColor: theme.palette.primary.main,
@@ -46,9 +53,9 @@ const TimelineBlock = ({ frontmatter, body, margin }: TimelineBlockType) => {
         >
           {role} @ {title}
         </Typography>
-        <Box>
+        <MDXFormat>
           <MDXRenderer>{body}</MDXRenderer>
-        </Box>
+        </MDXFormat>
       </Box>
     </Box>
   )

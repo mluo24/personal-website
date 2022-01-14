@@ -65,8 +65,8 @@ const ImageWrapper = styled(Box)(({ theme }) => ({
       height: 90,
     },
     [theme.breakpoints.up("sm")]: {
-      width: 180,
-      height: 180,
+      width: 160,
+      height: 160,
     },
     [theme.breakpoints.up("md")]: {
       width: "100%",
@@ -89,7 +89,7 @@ const IconInfo = ({ icon, content }: IconInfoType) => {
 
 const About = () => {
   return (
-    <Box position="relative" id="about" mt={{ xs: 0, lg: -5 }}>
+    <Box position="relative" id="about" mt={{ xs: -3, lg: -5 }}>
       <Toolbar sx={{ display: { xs: "block", lg: "none" } }} />
       {/* kind of hacky solution for centering lol */}
       <Box display="flex" alignItems="center" sx={{ minHeight: "100vh" }}>

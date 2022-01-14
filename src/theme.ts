@@ -65,7 +65,7 @@ const colors = createTheme({
   },
 })
 
-const bodyFont = ['"Open Sans"', '"Helvetica Neue"', "Arial", "sans-serif"].join(",")
+const bodyFont = ["'Open Sans'", "'Helvetica Neue'", "Arial", "sans-serif"].join(",")
 const headingFont = "Montserrat, Verdana, sans-serif"
 const subFont = "Inconsolata, 'Courier New', monospace"
 
@@ -108,13 +108,6 @@ const theme = createTheme(colors, {
     },
   },
   components: {
-    MuiCssBaseline: {
-      styleOverrides: `
-        ul li {
-          margin-bottom: 0.5rem;
-        }
-      `,
-    },
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
