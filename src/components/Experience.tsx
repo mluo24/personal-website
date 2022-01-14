@@ -35,10 +35,11 @@ const Experience = () => {
         component="h2"
         sx={{ color: neutral["50"] }}
         gutterBottom
+        mb={5}
       >
         Work Experience
       </Typography>
-      <Box m={4}>
+      <Box mx={4}>
         <WorkTimeline jobs={data.allMdx.nodes} />
       </Box>
     </Box>

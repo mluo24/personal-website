@@ -17,7 +17,7 @@ const TimelineBlock = ({ frontmatter, body, margin }: TimelineBlockType) => {
   const Circle = muiStyled("div")(({ theme }) => ({
     height: "1.2rem",
     width: "1.2rem",
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
     padding: 8,
     borderRadius: "100%",
     position: "absolute",
@@ -44,14 +44,25 @@ const TimelineBlock = ({ frontmatter, body, margin }: TimelineBlockType) => {
           {startDate} - {isCurrent ? "Present" : endDate}
         </Typography>
       </Box>
-      <Box pl={5} pb={0.5} sx={{ marginLeft: { md: margin } }}>
+      <Box
+        pl={5}
+        mb={3}
+        sx={{
+          position: { md: "relative" },
+          top: { md: -5 },
+          marginLeft: { md: margin },
+        }}
+      >
         <Typography
           variant="h5"
           component="h3"
           sx={{ color: neutral["100"] }}
           gutterBottom
         >
-          {role} @ {title}
+          {role} @{" "}
+          <Box component="span" sx={{ color: "primary.main" }}>
+            {title}
+          </Box>
         </Typography>
         <MDXFormat>
           <MDXRenderer>{body}</MDXRenderer>
