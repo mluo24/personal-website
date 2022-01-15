@@ -1,20 +1,20 @@
 import { Chip, ChipProps } from "@mui/material"
 import { styled } from "@mui/system"
+import neutral from "../themeColors"
 
 const Tag = styled(Chip)<ChipProps>(({ theme }) => ({
-  padding: "0 0.25rem",
+  padding: theme.spacing(1, 0.5),
   fontFamily: "Inconsolata, monospace",
-  color: theme.palette.colors.isabelline,
   "&.MuiChip-sizeMedium": {
-    backgroundColor: theme.palette.colors.independence,
-    color: theme.palette.colors.isabelline,
+    backgroundColor: theme.palette.background.paper,
     height: 28,
-    fontSize: 18,
+    fontSize: 16,
   },
   "&.MuiChip-sizeSmall": {
-    backgroundColor: theme.palette.colors.oldLavender,
+    backgroundColor: neutral["600"],
+    color: neutral["100"],
     height: 22,
-    fontSize: 14,
+    fontSize: 13,
   },
 }))
 

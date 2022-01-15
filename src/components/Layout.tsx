@@ -22,7 +22,7 @@ const Layout = ({ children }: ChildrenPageTypes) => {
     <Box>
       <MDXProvider components={shortcodes}>
         <Navbar />
-        <Box p={6}>{children}</Box>
+        <Box>{children}</Box>
         <Footer />
         <Fab
           size="small"

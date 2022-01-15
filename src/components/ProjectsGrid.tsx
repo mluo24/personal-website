@@ -7,7 +7,7 @@ const ProjectsGrid = ({ projects }: ProjectGridType) => {
   return (
     <Grid
       container
-      px={2}
+      px={{ xs: 0.5, md: 2 }}
       spacing={{ xs: 2, md: 3 }}
       columns={{ xs: 4, sm: 8, md: 12 }}
     >

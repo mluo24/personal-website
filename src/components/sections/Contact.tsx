@@ -1,18 +1,24 @@
 import * as React from "react"
 import { Box, Link, Toolbar, Typography } from "@mui/material"
+import neutral from "../../themeColors"
 
 const Contact = () => {
   return (
-    <Box py={10} id="contact">
+    <Box py={10} mb={5} id="contact">
       <Toolbar />
-      <Typography variant="h3" component="h2" gutterBottom>
+      <Typography
+        variant="h3"
+        component="h2"
+        sx={{ color: neutral["50"] }}
+        gutterBottom
+      >
         Contact Me!
       </Typography>
-      <Box mx={20} mt={10}>
+      <Box mx={{ xs: 2, md: 15 }} mt={10}>
         <Typography
           variant="h4"
-          color="colors.blackShadows"
           align="center"
+          sx={{ color: neutral["100"] }}
           gutterBottom
         >
           Want to get in touch?

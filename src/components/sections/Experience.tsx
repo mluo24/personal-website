@@ -1,8 +1,9 @@
 import * as React from "react"
 
 import { Box, Typography, Toolbar } from "@mui/material"
-import WorkTimeline from "./WorkTimeline"
+import WorkTimeline from "../WorkTimeline"
 import { graphql, useStaticQuery } from "gatsby"
+import neutral from "../../themeColors"
 
 const Experience = () => {
   const data = useStaticQuery(graphql`
@@ -29,10 +30,16 @@ const Experience = () => {
   return (
     <Box pt={6} id="experience">
       <Toolbar />
-      <Typography variant="h3" component="h2" gutterBottom>
+      <Typography
+        variant="h3"
+        component="h2"
+        sx={{ color: neutral["50"] }}
+        gutterBottom
+        mb={5}
+      >
         Work Experience
       </Typography>
-      <Box m={6}>
+      <Box mx={{ xs: 0, md: 4 }} ml={{ xs: 2 }}>
         <WorkTimeline jobs={data.allMdx.nodes} />
       </Box>
     </Box>

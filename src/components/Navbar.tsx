@@ -3,16 +3,25 @@ import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
 import IconButton from "@mui/material/IconButton"
-import Typography from "@mui/material/Typography"
-import Menu from "@mui/material/Menu"
 import MenuIcon from "@mui/icons-material/Menu"
 import Button from "@mui/material/Button"
-import MenuItem from "@mui/material/MenuItem"
 import MailOutlineIcon from "@mui/icons-material/MailOutline"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
-import { useScrollTrigger } from "@mui/material"
+import CloseIcon from "@mui/icons-material/Close"
+import {
+  Divider,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  styled,
+  useScrollTrigger,
+} from "@mui/material"
 import { ChildrenPageTypes } from "../types/pagetypes"
+import neutral from "../themeColors"
+import { useState } from "react"
 
 const socials = [
   {
@@ -50,107 +59,135 @@ function ElevationScroll(props: ChildrenPageTypes) {
   })
 }
 
-const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
+const socialBar = (
+  <>
+    <Button variant="outlined" href="main.pdf" target="_blank" sx={{ mr: 1 }}>
+      Resume
+    </Button>
+    {socials.map((social) => (
+      <IconButton
+        key={social.url}
+        href={social.url}
+        target="_blank"
+        sx={{ mx: 0.5 }}
+      >
+        {social.icon}
+      </IconButton>
+    ))}
+  </>
+)
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget)
+const DrawerHeader = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: "flex-end",
+}))
+
+const Navbar = () => {
+  const [open, setOpen] = useState<boolean>(false)
+
+  const handleOpenNavMenu = () => {
+    setOpen(true)
   }
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null)
+    setOpen(false)
   }
 
   return (
-    <React.Fragment>
-      <ElevationScroll>
-        <AppBar
-          position="fixed"
-          sx={{
-            backgroundColor: "colors.darkest",
-            color: "colors.isabelline",
-          }}
-          elevation={0}
-        >
-          <Toolbar>
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <Button
-                variant="outlined"
-                href="main.pdf"
-                target="_blank"
-                sx={{ mr: 1 }}
-              >
-                Resume
-              </Button>
-              {socials.map((social) => (
-                <IconButton
-                  key={social.url}
-                  color="primary"
-                  href={social.url}
-                  target="_blank"
-                  sx={{ mx: 0.5 }}
-                >
-                  {social.icon}
+    <ElevationScroll>
+      <AppBar
+        position="fixed"
+        sx={{
+          backgroundColor: "background.default",
+        }}
+        elevation={0}
+      >
+        <Toolbar>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>{socialBar}</Box>
+
+          <Box sx={{ flexGrow: { xs: 0, md: 1 } }} />
+
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "flex-end",
+            }}
+          >
+            <IconButton
+              size="large"
+              aria-label="site menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Drawer
+              anchor="right"
+              open={open}
+              onClose={handleCloseNavMenu}
+              sx={{
+                width: 500,
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              <DrawerHeader>
+                <IconButton onClick={handleCloseNavMenu}>
+                  <CloseIcon />
                 </IconButton>
-              ))}
-            </Box>
+              </DrawerHeader>
+              <nav>
+                <List>
+                  <ListItem>{socialBar}</ListItem>
+                </List>
+              </nav>
+              <Divider />
+              <nav>
+                <List>
+                  {pages.map((page) => (
+                    <ListItem key={page.name} disablePadding>
+                      <ListItemButton
+                        component="a"
+                        href={page.url}
+                        onClick={handleCloseNavMenu}
+                      >
+                        <ListItemText
+                          primary={page.name}
+                          primaryTypographyProps={{ variant: "button" }}
+                        />
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+              </nav>
+            </Drawer>
+          </Box>
 
-            <Box sx={{ flexGrow: { xs: 0, md: 1 } }} />
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            {pages.map((page) => (
+              <Button
+                key={page.name}
                 sx={{
-                  display: { xs: "block", md: "none" },
+                  my: 2,
+                  color: neutral["50"],
+                  display: "block",
                 }}
+                // component={Link}
+                // to={page.url}
+                href={page.url}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.name}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page.name}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                  // component={Link}
-                  // to={page.url}
-                  href={page.url}
-                >
-                  {page.name}
-                </Button>
-              ))}
-            </Box>
-          </Toolbar>
-        </AppBar>
-      </ElevationScroll>
-    </React.Fragment>
+                {page.name}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </ElevationScroll>
   )
 }
 export default Navbar

@@ -1,7 +1,8 @@
 import * as React from "react"
 import { Box, Typography, Toolbar } from "@mui/material"
 import { useStaticQuery, graphql } from "gatsby"
-import ProjectsGrid from "./ProjectsGrid"
+import ProjectsGrid from "../ProjectsGrid"
+import neutral from "../../themeColors"
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
@@ -28,7 +29,7 @@ const Projects = () => {
   return (
     <Box my={2} pt={6} id="projects">
       <Toolbar />
-      <Typography variant="h3" component="h2" gutterBottom>
+      <Typography variant="h3" component="h2" sx={{ color: neutral["50"] }} mb={5}>
         Projects
       </Typography>
       <ProjectsGrid projects={data.allMdx.nodes} />

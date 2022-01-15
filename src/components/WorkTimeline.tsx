@@ -3,6 +3,8 @@ import { Box } from "@mui/material"
 import TimelineBlock from "./TimelineBlock"
 import { TimelineType } from "../types/pagetypes"
 
+const fromLeft = "25%"
+
 const WorkTimeline = ({ jobs }: TimelineType) => {
   return (
     <Box
@@ -13,15 +15,15 @@ const WorkTimeline = ({ jobs }: TimelineType) => {
           display: "block",
           width: "1px",
           height: "100%",
-          background: "#4A4E69",
+          bgcolor: "background.paper",
           position: "absolute",
-          left: "20%",
+          left: { md: fromLeft },
           top: 0,
         },
       }}
     >
       {jobs.map((job) => {
-        return <TimelineBlock key={job.id} {...job} />
+        return <TimelineBlock key={job.id} {...job} margin={fromLeft} />
       })}
     </Box>
   )

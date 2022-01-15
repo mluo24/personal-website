@@ -1,5 +1,11 @@
+import React from "react"
+
 export interface ChildrenPageTypes {
   children: JSX.Element
+}
+
+export interface MultipleChildrenTypes {
+  children: React.ReactNode
 }
 
 export interface MDXQueryNodeTypes {
@@ -30,8 +36,14 @@ export interface TimelineBlockType extends MDXQueryNodeTypes {
     title: string
     companyUrl?: string
   }
+  margin?: string | number
 }
 
 export interface TimelineType {
   jobs: TimelineBlockType[]
+}
+
+export interface IconInfoType {
+  icon: JSX.Element
+  content: string
 }
