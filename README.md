@@ -1,54 +1,41 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Miranda Luo's Personal Website
 
-## 🚀 Quick start
+This repository holds the code for my personal website, created with Gatsby (React) and MUI and hosted on GitHub Pages, which can be found at this URL: [mluo24@github.io](mluo24@github.io). Feel free to let me know if there are any issues with the site.
 
-1.  **Create a Gatsby site.**
+## How to Install and Run
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+If you wish to clone this repo and run it locally, here are the steps:
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+1. Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
 
-2.  **Start developing.**
+2. Install the Gatsby CLI
 
-    Navigate into your new site’s directory and start it up.
+```
+npm install -g gatsby-cli
+```
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+3. Install dependencies
 
-3.  **Open the code and start customizing!**
+```
+yarn
+```
 
-    Your site is now running at http://localhost:8000!
+4. Run the developmental server
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+```
+gatsby develop
+```
+or
 
-4.  **Learn more**
+```
+yarn start
+```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Future Plans
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+- Adding support for a light mode (and toggling between dark and light)
+- Deploying with GitHub Actions
+- Improving navigation/scrolling with the menu
+- Giving projects a more detailed projects popup/page
+- Adding animations
+- Better organization (of sections)
