@@ -59,6 +59,24 @@ function ElevationScroll(props: ChildrenPageTypes) {
   })
 }
 
+const socialBar = (
+  <>
+    <Button variant="outlined" href="main.pdf" target="_blank" sx={{ mr: 1 }}>
+      Resume
+    </Button>
+    {socials.map((social) => (
+      <IconButton
+        key={social.url}
+        href={social.url}
+        target="_blank"
+        sx={{ mx: 0.5 }}
+      >
+        {social.icon}
+      </IconButton>
+    ))}
+  </>
+)
+
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
@@ -89,26 +107,7 @@ const Navbar = () => {
         elevation={0}
       >
         <Toolbar>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Button
-              variant="outlined"
-              href="main.pdf"
-              target="_blank"
-              sx={{ mr: 1 }}
-            >
-              Resume
-            </Button>
-            {socials.map((social) => (
-              <IconButton
-                key={social.url}
-                href={social.url}
-                target="_blank"
-                sx={{ mx: 0.5 }}
-              >
-                {social.icon}
-              </IconButton>
-            ))}
-          </Box>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>{socialBar}</Box>
 
           <Box sx={{ flexGrow: { xs: 0, md: 1 } }} />
 
@@ -144,26 +143,7 @@ const Navbar = () => {
               </DrawerHeader>
               <nav>
                 <List>
-                  <ListItem>
-                    <Button
-                      variant="outlined"
-                      href="main.pdf"
-                      target="_blank"
-                      sx={{ mr: 1 }}
-                    >
-                      Resume
-                    </Button>
-                    {socials.map((social) => (
-                      <IconButton
-                        key={social.url}
-                        href={social.url}
-                        target="_blank"
-                        sx={{ mx: 0.5 }}
-                      >
-                        {social.icon}
-                      </IconButton>
-                    ))}
-                  </ListItem>
+                  <ListItem>{socialBar}</ListItem>
                 </List>
               </nav>
               <Divider />
