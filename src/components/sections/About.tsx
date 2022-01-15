@@ -89,31 +89,15 @@ const IconInfo = ({ icon, content }: IconInfoType) => {
 
 const About = () => {
   return (
-    <Box position="relative" id="about" mt={{ xs: -3, lg: -5 }}>
-      <Toolbar sx={{ display: { xs: "block", lg: "none" } }} />
+    <Box position="relative" id="about">
+      <Toolbar sx={{ display: { xs: "block", sm: "none" } }} />
       {/* kind of hacky solution for centering lol */}
-      <Box display="flex" alignItems="center" sx={{ minHeight: "100vh" }}>
-        <Grid container spacing={8}>
-          <Grid
-            item
-            md
-            display={{ xs: "flex", md: "block" }}
-            alignItems="center"
-            sx={{ columnGap: { xs: 0, sm: 4 } }}
-          >
-            <ImageWrapper>
-              <StaticImage
-                className="selfimg"
-                alt="A picture of me!"
-                src="../images/miranda.jpg"
-              />
-            </ImageWrapper>
-            <Box>
-              {sideInfo.map((e, i) => {
-                return <IconInfo {...e} key={i} />
-              })}
-            </Box>
-          </Grid>
+      <Box
+        display="flex"
+        alignItems="center"
+        sx={{ pt: { xs: 0, md: 5 }, minHeight: "100vh" }}
+      >
+        <Grid container spacing={{ xs: 4, md: 8 }}>
           <Grid item md={8}>
             <Typography variant="h2" component="h1" color="primary" gutterBottom>
               &#128075; Hi, I'm Miranda!
@@ -144,12 +128,32 @@ const About = () => {
               ))}
             </WrapStack>
           </Grid>
+          <Grid
+            item
+            md
+            display={{ xs: "flex", md: "block" }}
+            alignItems="center"
+            sx={{ columnGap: { xs: 0, sm: 4 } }}
+          >
+            <ImageWrapper>
+              <StaticImage
+                className="selfimg"
+                alt="A picture of me!"
+                src="../../images/miranda.jpg"
+              />
+            </ImageWrapper>
+            <Box>
+              {sideInfo.map((e, i) => {
+                return <IconInfo {...e} key={i} />
+              })}
+            </Box>
+          </Grid>
         </Grid>
       </Box>
       <Box
         position="absolute"
         display={{ xs: "none", lg: "initial" }}
-        sx={{ bottom: "5%", left: "50%", transform: "translate(-50%, 0)" }}
+        sx={{ bottom: "4%", left: "50%", transform: "translate(-50%, 0)" }}
       >
         <IconButton color="primary" href="#experience">
           <KeyboardArrowDownIcon />

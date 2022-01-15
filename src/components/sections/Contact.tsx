@@ -4,7 +4,7 @@ import neutral from "../../themeColors"
 
 const Contact = () => {
   return (
-    <Box py={10} id="contact">
+    <Box py={10} mb={5} id="contact">
       <Toolbar />
       <Typography
         variant="h3"

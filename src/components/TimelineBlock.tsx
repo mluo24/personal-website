@@ -6,6 +6,10 @@ import neutral from "../themeColors"
 import styled from "@emotion/styled"
 
 const MDXFormat = styled.div`
+  ul {
+    padding-left: 1.8rem;
+  }
+
   ul li {
     margin-bottom: 0.5rem;
   }
@@ -32,7 +36,7 @@ const TimelineBlock = ({ frontmatter, body, margin }: TimelineBlockType) => {
       <Circle />
       <Box
         pr={4}
-        pl={{ xs: 5, md: 0 }}
+        pl={{ xs: 3, md: 0 }}
         sx={{
           width: { md: margin },
           float: { md: "left" },
@@ -45,7 +49,7 @@ const TimelineBlock = ({ frontmatter, body, margin }: TimelineBlockType) => {
         </Typography>
       </Box>
       <Box
-        pl={5}
+        pl={3}
         mb={3}
         sx={{
           position: { md: "relative" },

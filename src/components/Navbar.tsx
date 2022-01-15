@@ -112,7 +112,13 @@ const Navbar = () => {
 
           <Box sx={{ flexGrow: { xs: 0, md: 1 } }} />
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "flex-end",
+            }}
+          >
             <IconButton
               size="large"
               aria-label="site menu"
@@ -123,7 +129,7 @@ const Navbar = () => {
               <MenuIcon />
             </IconButton>
             <Drawer
-              anchor="left"
+              anchor="right"
               open={open}
               onClose={handleCloseNavMenu}
               sx={{
