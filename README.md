@@ -1,12 +1,15 @@
 # Miranda Luo's Personal Website
 
-This repository holds the code for my personal website, created with Gatsby (React) and MUI and hosted on GitHub Pages, which can be found at this URL: [mluo24@github.io](mluo24@github.io). Feel free to let me know if there are any issues with the site.
+This repository holds the code for my personal website, created with Gatsby (React) and MUI and hosted on GitHub Pages,
+which can be found at this URL: [mluo24@github.io](https://mluo24.github.io/). Feel free to let me know if there are any
+issues with the site.
 
 ## How to Install and Run
 
 If you wish to clone this repo and run it locally, here are the steps:
 
-1. Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+1. Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+   and [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
 
 2. Install the Gatsby CLI
 
@@ -25,6 +28,7 @@ yarn
 ```
 gatsby develop
 ```
+
 or
 
 ```
