@@ -17,6 +17,5 @@ module.exports = {
       },
     },
     "gatsby-plugin-mdx",
-    "gatsby-transformer-remark", // can remove this later
   ],
 }

@@ -1,53 +1,26 @@
 import * as React from "react"
 import { Link } from "gatsby"
-
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import Layout from "../components/Layout"
+import Container from "@mui/material/Container"
+import { Toolbar, Typography } from "@mui/material"
+import Button from "@mui/material/Button"
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn't find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout>
+      <Container>
+        <Toolbar />
+        <Typography variant="h1" align="center" mt={10} mb={5}>
+          404: Not Found
+        </Typography>
+        <Typography align="center" mb={10}>
+          <Button variant="outlined" size="large" component={Link} to="/">
+            Go to Index
+          </Button>
+        </Typography>
+      </Container>
+    </Layout>
   )
 }
 
