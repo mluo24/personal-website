@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://mluo24.github.io/",
     title: "Miranda Luo's Personal Website",
   },
   plugins: [
