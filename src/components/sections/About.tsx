@@ -74,6 +74,9 @@ const ImageWrapper = styled(Box)(({ theme }) => ({
       paddingBottom: "100%",
     },
   },
+  ".selfimg img": {
+    borderRadius: "100%",
+  },
 }))
 
 const IconInfo = ({ icon, content }: IconInfoType) => {
