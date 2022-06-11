@@ -18,8 +18,9 @@ jobs:
         run: yarn install
         
       # add private keys
-      - name: webfactory/ssh-agent
-        uses: webfactory/ssh-agent@v0.5.4
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       
       # step deploys with the deploy command
       - name: Deploy with gh-pages
