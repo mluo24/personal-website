@@ -16,6 +16,10 @@ jobs:
       
       - name: Install dependencies
         run: yarn install
+        
+      # add private keys
+      - name: webfactory/ssh-agent
+        uses: webfactory/ssh-agent@v0.5.4
       
       # step deploys with the deploy command
       - name: Deploy with gh-pages
