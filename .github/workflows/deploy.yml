@@ -15,7 +15,10 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build Gatsby
-        run: yarn install && gatsby build
+        run: |
+          npm install -g gatsby-cli
+          yarn install
+          gatsby build
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
