@@ -21,4 +21,8 @@ jobs:
       
       # step deploys with the deploy command
       - name: Deploy with gh-pages
-        run: yarn install && yarn run deploy
+        run: | 
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/mluo24/mluo24.github.io.git
+          yarn install && yarn run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
