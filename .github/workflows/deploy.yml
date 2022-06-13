@@ -22,5 +22,7 @@ jobs:
       # step deploys with the deploy command
       - name: Deploy with gh-pages
         run: | 
-          git remote set-url origin git@github.com:mluo24/mluo24.github.io.git
+          git remote set-url origin https://${GITHUB_TOKEN}@github.com/mluo24/mluo24.github.io.git
           yarn install && yarn run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
