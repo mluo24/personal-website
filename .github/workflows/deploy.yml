@@ -13,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Install dependencies
-        run: yarn install
         
       # add private keys
       - uses: webfactory/ssh-agent@v0.5.4
@@ -24,6 +21,4 @@ jobs:
       
       # step deploys with the deploy command
       - name: Deploy with gh-pages
-        run: yarn run deploy -- -u "github-actions-bot <support+actions@github.com>"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn install && yarn run deploy
