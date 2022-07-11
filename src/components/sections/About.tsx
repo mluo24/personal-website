@@ -16,6 +16,7 @@ import Tag from "../Tag"
 import WrapStack from "../WrapStack"
 import { StaticImage } from "gatsby-plugin-image"
 import { IconInfoType } from "../../types/pagetypes"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const skills: string[] = [
   "Java",
@@ -118,7 +119,11 @@ const About = () => {
             </Typography>
             <Typography variant="body1" mb={2}>
               Currently, I am involved as a full-stack developer for{" "}
-              <Link href="https://www.cornelldti.org/" target="_blank">
+              <Link
+                component={OutboundLink}
+                href="https://www.cornelldti.org/"
+                target="_blank"
+              >
                 Cornell Design &amp; Tech Initiative
               </Link>{" "}
               and a consultant for CS 3110: Data Structures and Functional
