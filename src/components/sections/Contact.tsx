@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Box, Link, Toolbar, Typography } from "@mui/material"
 import neutral from "../../themeColors"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const Contact = () => {
   return (
@@ -29,19 +30,31 @@ const Contact = () => {
         </Typography>
         <Typography align="center">
           <strong>Email</strong>:{" "}
-          <Link href="mailto:mml267@cornell.edu" target="_blank">
+          <Link
+            component={OutboundLink}
+            href="mailto:mml267@cornell.edu"
+            target="_blank"
+          >
             mml267@cornell.edu
           </Link>
         </Typography>
         <Typography align="center">
           <strong>LinkedIn</strong>:{" "}
-          <Link href="https://www.linkedin.com/in/miranda-luo" target="_blank">
+          <Link
+            component={OutboundLink}
+            href="https://www.linkedin.com/in/miranda-luo"
+            target="_blank"
+          >
             linkedin.com/in/miranda-luo
           </Link>
         </Typography>
         <Typography align="center">
           <strong>GitHub</strong>:{" "}
-          <Link href="https://github.com/mluo24" target="_blank">
+          <Link
+            component={OutboundLink}
+            href="https://github.com/mluo24"
+            target="_blank"
+          >
             github.com/mluo24
           </Link>
         </Typography>

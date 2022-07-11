@@ -22,6 +22,7 @@ import {
 import { ChildrenPageTypes } from "../types/pagetypes"
 import neutral from "../themeColors"
 import { useState } from "react"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const socials = [
   {
@@ -177,8 +178,7 @@ const Navbar = () => {
                   color: neutral["50"],
                   display: "block",
                 }}
-                // component={Link}
-                // to={page.url}
+                component={OutboundLink}
                 href={page.url}
               >
                 {page.name}

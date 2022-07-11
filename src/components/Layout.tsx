@@ -6,13 +6,23 @@ import { ChildrenPageTypes } from "../types/pagetypes"
 import { MDXProvider } from "@mdx-js/react"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
-import { Link, Typography } from "@mui/material"
+import { Link as MUILink, Typography } from "@mui/material"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
+import { LinkProps } from "@mui/material/Link/Link"
 
 // enabling smooth scroll
 // https://github.com/gatsbyjs/gatsby/issues/3318
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]')
+}
+
+const Link = (props: LinkProps) => {
+  return (
+    <MUILink component={OutboundLink} href={props.href} target={props.target}>
+      {props.children}
+    </MUILink>
+  )
 }
 
 const shortcodes = { Typography, Link }
