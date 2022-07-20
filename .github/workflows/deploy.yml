@@ -14,12 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: install # will run `yarn install` command
-
       - name: Build Gatsby
-        run: gatsby build
+        run: |
+          npm install -g gatsby-cli
+          yarn install
+          gatsby build
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
