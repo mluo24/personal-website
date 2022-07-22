@@ -30,6 +30,7 @@ const skills: string[] = [
   "SQL",
   "Django",
   "React",
+  "Vue",
   "Flask",
   "Rails",
   "Node.js",
@@ -126,8 +127,7 @@ const About = () => {
               >
                 Cornell Design &amp; Tech Initiative
               </Link>{" "}
-              and a consultant for CS 3110: Data Structures and Functional
-              Programming.
+              and as a Software Engineer Intern at Instagram (Meta).
             </Typography>
             <Typography variant="body1" mb={2}>
               These are some of my skills and languages/technologies I am familiar
