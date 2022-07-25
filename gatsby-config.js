@@ -5,7 +5,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-top-layout",
-    // "gatsby-plugin-mui-emotion",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-mantine",
     "gatsby-plugin-image",
